@@ -1,0 +1,44 @@
+.result span {
+    font-size: 12px;
+
+    &#total {
+        cursor: pointer;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+    &#correct {
+        cursor: pointer;
+        color: green;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+    &#incorrect {
+        cursor: pointer;
+        color: red;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+}
+
+// #dataTable {
+//     position: relative;
+//     float: left;
+//     width: 100%;
+//     transition: transform 0.2s linear;
+// }
+
+// #chart {
+//     position: relative;
+//     width: 100%;
+//     left: 100%;
+//     transition: transform 0.2s linear;
+// }

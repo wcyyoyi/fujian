@@ -1,0 +1,50 @@
+<PAMDataset>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="INTERLEAVE">BAND</MDI>
+  </Metadata>
+  <Metadata>
+    <MDI key="Band_1">Band 1</MDI>
+    <MDI key="DataType">Generic</MDI>
+  </Metadata>
+  <Metadata domain="ENVI">
+    <MDI key="bands">1</MDI>
+    <MDI key="band_names">{Band 1}</MDI>
+    <MDI key="byte_order">0</MDI>
+    <MDI key="coordinate_system_string">{GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]}</MDI>
+    <MDI key="data_type">3</MDI>
+    <MDI key="description">{D:\FTP\map\ArcGIS\FJ\new\meteo\county.dat}</MDI>
+    <MDI key="file_type">ENVI Standard</MDI>
+    <MDI key="header_offset">0</MDI>
+    <MDI key="interleave">bsq</MDI>
+    <MDI key="lines">1904</MDI>
+    <MDI key="map_info">{Geographic Lat/Lon, 1, 1, 115.846403262, 28.320896, 0.0025, 0.0025,WGS-84}</MDI>
+    <MDI key="samples">1951</MDI>
+  </Metadata>
+  <Metadata domain="Esri">
+    <MDI key="PyramidResamplingType">NEAREST</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <NoDataValue>-9.99000000000000E+002</NoDataValue>
+    <Histograms>
+      <HistItem>
+        <HistMin>350102</HistMin>
+        <HistMax>350982</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>6534|0|8168|0|0|46889|69057|4379|0|0|0|0|0|0|0|0|0|0|0|0|0|0|22468|9593|0|0|0|0|0|3460|956|12874|4897|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|6925|22074|0|0|0|0|26399|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|5072|11556|0|0|0|0|25027|142478|80772|24956|0|0|0|0|0|0|0|0|0|0|0|0|0|42259|0|0|0|0|0|743|11062|0|0|0|0|9906|95477|2096|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2248|38158|0|0|0|0|3575|1792|0|0|0|0|42661|33795|79169|0|0|0|0|0|0|0|0|0|0|0|0|0|0|17948|0|0|0|0|0|38456|49410|0|0|0|0|111131|40695|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|41666|102119|0|0|0|0|38307|31758|0|0|0|0|85538|74872|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|42412|0|0|0|0|0|20213|0|0|0|0|0|77679|43860|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|26060|21537</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="SourceBandIndex">0</MDI>
+      <MDI key="STATISTICS_COVARIANCES">55907.53016368373</MDI>
+      <MDI key="STATISTICS_EXCLUDEDVALUES"></MDI>
+      <MDI key="STATISTICS_MAXIMUM">350982</MDI>
+      <MDI key="STATISTICS_MEAN">350609.24043344</MDI>
+      <MDI key="STATISTICS_MINIMUM">350102</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">236.44773241392</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

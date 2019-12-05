@@ -1,0 +1,16 @@
+@import '../../../../scss/component.scss';
+button.yz-btn-level1{
+    background-color: $aside-border-level1;
+    color: $white-color !important;
+}
+button.yz-btn-level2{
+    background-color: $aside-border-level2;
+    color: $white-color !important;
+}
+button.yz-btn-level3{
+    background-color: $header-border-level3;
+    color: $white-color !important;
+}
+.theme{
+    margin: 5px;
+}

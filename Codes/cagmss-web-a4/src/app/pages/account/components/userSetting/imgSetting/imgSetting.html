@@ -1,0 +1,53 @@
+<ba-card title="背景图片上传" baCardClass="with-scroll">
+    <div class="row form-group">
+        <div class="col-sm-6">
+            <label class="col-sm-4 control-label">上传位置</label>
+            <select class="col-sm-6 form-control" [ngModel]="selLevel" (ngModelChange)="onLevelChange($event);"
+                style="width:100%;display:inline-block;">
+                <option [value]="level.code" *ngFor="let level of levelList">{{level.desc}}</option>
+            </select>
+        </div>
+        <div class="col-sm-6">
+            <img-upload #fileUpload (submitStatus)="submitStatus($event)" (submitSuccess)="submitSuccess($event)"
+                [selLevel]="selLevel"></img-upload>
+        </div>
+    </div>
+    <button (click)='upload()' class="btn yz-btn" [ngClass]="btnClassLevel" style="    display: block;
+    margin: 20px auto;" #sub disabled>上传</button>
+</ba-card>
+<ba-card title="背景图片配置" baCardClass="with-scroll">
+    <div id="img-container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>当前可选背景图片:
+                    <button (click)='addImg()' class="btn yz-btn" [ngClass]="btnClassLevel"
+                        style="margin: 0 10px">添加</button>
+                    <button (click)='deleteImg()' class="btn yz-btn" [ngClass]="btnClassLevel">删除</button>
+                </h3>
+                <div class="bannerImg-container">
+                    <div class="banner-left-img" *ngFor="let img of allImgList">
+                        <input type="checkbox" class="banner-checkbox" [(ngModel)]="img.state">
+                        <img src="{{img.url}}" alt="" class="bannerImg">
+                        <!-- <span (click)="selectImg(img)"><img src="/assets/img/images/arrow-level{{themeLevel}}.jpg"
+                                *ngIf='!bannerImgs.includes(img)' /></span>
+                        <span (click)="selectImg(img)"><img
+                                src="/assets/img/images/arrow-level{{themeLevel}}-selected.jpg"
+                                *ngIf='bannerImgs.includes(img)' /></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3>当前已选背景图片:</h3>
+                <div class="bannerImg-container">
+                    <div class="banner-img" *ngFor="let item of bannerImgs">
+                        <img src="{{item}}" alt="" class="bannerImg">
+                        <span (click)="delete(item)">x</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)='save()' class="btn yz-btn" [ngClass]="btnClassLevel" style="    display: block;
+        margin: 20px auto;">保存</button>
+</ba-card>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

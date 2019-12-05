@@ -1,0 +1,12 @@
+.eye{
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    line-height: 38px;
+}
+
+button[disabled]{
+    transform: none;
+}

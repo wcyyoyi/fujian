@@ -1,0 +1,7 @@
+<div class="form-horizontal h-100 p-2">
+    <ba-card title="书签列表" baCardClass="with-scroll markTableCard">
+        <button type="button" class="btn yz-btn addnew" [ngClass]="btnClassLevel" (click)="addMark()">添加</button>
+        <ba-grid #grid [source]="bookMark" [settings]="settings"></ba-grid>
+    </ba-card>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

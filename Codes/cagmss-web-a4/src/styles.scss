@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../src/app/pages/scss/table.scss";
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-balham.css";
+
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+@import "../src/app/pages/scss/component.scss";
+
+$ionicons-font-path: "../node_modules/yz-ngx-base/node_modules/ionicons/dist/fonts";
+@import "../node_modules/yz-ngx-base/node_modules/ionicons/dist/scss/ionicons.scss"
+
+

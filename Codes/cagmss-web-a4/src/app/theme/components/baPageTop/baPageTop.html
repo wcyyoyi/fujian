@@ -1,0 +1,27 @@
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+  [ngClass]="{scrolled: isScrolled}">
+  <div class="fadeImg" style="">
+    <div id="banner-container">
+      <img src="{{item}}" alt="" *ngFor="let item of bannerImgs" [ngClass]="{'imgNoShow':item!=bannerImgs[0],'imgShow':item==bannerImgs[0]&&bannerImgs.length==1}">
+    </div>
+  </div>
+  <div class="banner-bg"></div>
+  <div class="top-detail">
+    <a routerLink="/pages/dashboard" class="collapse-menu-link"></a>
+    <a routerLink="/pages/dashboard" class="al-logo clearfix">{{city}}农业气象业务平台</a>
+    <div class="user-profile clearfix">
+      <div class="dropdown al-user-profile">
+        <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" aria-expanded="false"
+          routerLink="/pages/account">
+          <img src="{{ ( 'Nasta' | baProfilePicture ) }}">
+          <span>{{name}}</span>
+        </a>
+        <div class="top-split"></div>
+        <a [routerLink]="['/login']" class="profile-toggle-link top-logout">
+          <i class="ion-log-out"></i>
+          <span>退出</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

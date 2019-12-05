@@ -1,0 +1,31 @@
+<div class="row w-100 h-100 p-2 detail-edit" style="overflow: hidden;">
+    <div class="col-md-12">
+        <ba-card title="内容编辑{{msg}}" baCardClass="with-scroll h-100 m-0">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"
+                style="position: absolute;left:100px;top: 6px;">
+                <div class="btn-group" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px" (click)="save()"
+                        #sBtn *ngIf="option=='watch'">保存
+                    </button>
+                    <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px"
+                        (click)="anotherSave()" #sBtn1 *ngIf="option=='select'">另存为
+                    </button>
+                    <button (click)="changeStatus()" class="btn btn-secondary m-1 p-1 rounded"
+                        tooltip="书签的固定格式为[$xxx]不能打乱格式" placement="bottom">{{content}}</button>
+                </div>
+            </div>
+            <div id="ckeditor" style="height: 100%;">
+                <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+                <ckeditor #ckeditor [(ngModel)]="ckeditorContent" [config]="_config"></ckeditor>
+            </div>
+        </ba-card>
+    </div>
+    <div class="mark-list" [ngClass]='{"active":status,"detail_wrap":!status}'>
+        <div *ngFor="let mark of markArr" class="mark">
+            <div><span>书签：</span><span>{{mark.name}}</span></div>
+            <div><span>类型：</span><span>{{mark.type}}</span></div>
+            <div><span>含义：</span><span>{{mark.bookmarkDesc}}</span></div>
+        </div>
+        <span *ngIf="length==0">没有数据</span>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<ba-card title="查询设置" baCardClass="with-scroll" class="setting-container">
+  <time-settings (onSelected)="onSelectedTimes($event)" [hourShow]="hourShow" [tabName]="tabName"></time-settings>
+  <div class="row form-group" *ngIf="tabName!='cli'">
+    <label for="txtStation" class="control-label col-sm-1">站点列表</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" (click)="showStaModal()" readonly value="{{selStationInfo}}" />
+    </div>
+  </div>
+  <!-- <div class="row form-group" *ngIf="tabName=='cli'">
+    <label for="txtStation" class="control-label col-sm-1">站号</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" [(ngModel)]="v01000" />
+    </div>
+    <div class="col-sm-6">
+      <span>站号用,隔开</span>
+    </div>
+  </div> -->
+  <div class="row" style="justify-content: center">
+    <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="onQuery()">查询</button>
+  </div>
+</ba-card>
+<ba-card title="{{excelDataName}}数据" baCardClass="with-scroll">
+  <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+  <button (click)="export()" style="position: absolute;right: 0;top: 0;margin: 12px 22px"
+    *ngIf="level==1">导出为excel</button>
+  <div style="height: 500px;">
+    <ba-grid #grid [settings]="settings" [source]="source" [isFieldSelection]="true"
+      (onBaGridReady)="isGridReady=true;"></ba-grid>
+  </div>
+</ba-card>

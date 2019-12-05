@@ -1,0 +1,65 @@
+<div class="h-100">
+    <div class="row w-100">
+        <nav aria-label="breadcrumb" class="w-100">
+            <ol class="breadcrumb mb-0" style="border-radius:0">
+                <li *ngIf="makeCompany !== baseMakeCompany" class="breadcrumb-item">
+                    <a class="text-secondary" [routerLink]="['../../../../homePage',makeCompany.cPCode]">[&nbsp;&nbsp;{{makeCompany.cName}}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span class="text-dark">分类查看&nbsp;&nbsp;]</span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row crop-list form-horizontal">
+        <tabset class="w-100">
+            <tab heading="文字产品">
+                <div class="searchForm">
+                    <div class="row align-items-center" *ngIf="wordProdMenus!=undefined">
+                        <label class="col-md-2 control-label">{{wordProdMenus.title}}</label>
+                        <div class="col-md-10">
+                            <div class="float-left w-25" *ngFor="let item of wordProdMenus.elements">
+                                <input type="{{wordProdMenus.type}}" value={{item.value}} name="{{wordProdMenus.id}}HTMLName" (change)="createElements(item,wordProdMenus.id,'HTML','dataType')"> {{item.label}}
+                            </div>
+                        </div>
+                        <div id="{{wordProdMenus.id}}HTML" class="w-100"></div>
+                    </div>
+                </div>
+                <div>
+                    <alert type={{wordAlertType}}>
+                        <strong>{{wordAlertInfo}}</strong>
+                    </alert>
+                    <div class="text-center">
+                        <!-- <ng2-smart-table [settings]="wordSettings" [source]="wordSource" (userRowSelect)="htmlDetail($event)"></ng2-smart-table> -->
+                        <ng2-smart-table [settings]="wordSettings" [source]="wordSource"></ng2-smart-table>
+                    </div>
+                </div>
+            </tab>
+            <tab heading="图片产品" style="height: 100%;">
+                <div class="searchForm">
+                        <div class="row align-items-center" *ngIf="imgProdMenus!=undefined">
+                                <label class="col-md-2 control-label">{{imgProdMenus.title}}</label>
+                                <div class="col-md-10">
+                                    <div class="float-left w-25" *ngFor="let item of imgProdMenus.elements">
+                                        <input type="{{imgProdMenus.type}}" value={{item.value}} name="{{imgProdMenus.id}}JPGName" (change)="createElements(item,imgProdMenus.id,'JPG','dataType')"> {{item.label}}
+                                    </div>
+                                </div>
+                                <div id="{{imgProdMenus.id}}JPG" class="w-100"></div>
+                            </div>
+                </div>
+                <div>
+                    <alert type={{imgAlertType}}>
+                        <strong>{{imgAlertInfo}}</strong>
+                    </alert>
+                    <div class="text-center">
+                        <div class="pl-3 pr-3">
+                            <ng-container *ngFor="let item of imgList">
+                                <img src={{item.url}} style="width:16%" class="float-left" (click)="imgDetail(item.num);" alt={{item.cnName}}>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

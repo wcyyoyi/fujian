@@ -1,0 +1,36 @@
+<ba-card title="设置" baCardClass="with-scroll" class="setting-container">
+  <div class="form-horizontal form-group row">
+    <label for="txtStartTime" class="col-sm-2 control-label">开始时间</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="txtStartTime" [(ngModel)]="startDate" [bsConfig]="bsConfig"
+        placeholder="请选择开始时间" bsDatepicker [maxDate]="now">
+    </div>
+    <label for="txtStartTime" class="col-sm-2 control-label">结束时间</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="txtEndTime" [(ngModel)]="endDate" [bsConfig]="bsConfig"
+        placeholder="请选择结束时间" bsDatepicker [maxDate]="now">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="txtEle" class="col-sm-2 control-label">要素</label>
+    <div class="col-sm-3">
+      <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem"
+        (ngModelChange)="onEleChange($event)">
+        <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+      </select>
+    </div>
+    <label for="txtCrop" class="col-sm-2 control-label">区域选择</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" (click)="showAreaInfo('区域选择')" readonly [ngModel]="selStationInfo" [disabled]="level==3"/>
+    </div>
+  </div>
+  <div class="row" style="justify-content: center">
+    <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="onClick()">出图</button>
+  </div>
+</ba-card>
+
+<ba-card title="图片浏览" baCardClass="with-scroll">
+  <ng2-slim-loading-bar></ng2-slim-loading-bar>
+  <img id="imgGrid" (error)="onError()" />
+  <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+</ba-card>

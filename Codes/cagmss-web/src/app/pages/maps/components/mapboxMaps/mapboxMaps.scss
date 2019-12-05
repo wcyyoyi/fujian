@@ -1,0 +1,45 @@
+@import "~mapbox-gl/dist/mapbox-gl";
+@import '../../../../theme/sass/conf/conf';
+
+.mapbox-maps {
+  width: 100%;
+  // height: calc(100vh - 283px);
+  height: 100%;
+}
+
+.layers-box {
+    height: 75px;
+    width: 150px;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 15px;
+    text-align: center;
+}
+
+.marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    background-size:cover;
+    background-position:center;
+}
+
+/* Override default control style */
+.mapbox-gl-draw_ctrl-draw-btn {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.mapbox-gl-draw_stat {
+  background-image: url(/assets/img/station.svg);
+  background-size: 18px 18px;
+  background-position:center;
+}
+.mapbox-gl-draw_yield {
+  background-image: url(/assets/img/yield.svg);
+  background-size: 18px 18px;
+  background-position:center;
+}

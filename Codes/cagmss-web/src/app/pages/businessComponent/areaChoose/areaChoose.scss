@@ -1,0 +1,33 @@
+.tag {
+    width: 100px;
+    padding: 5px;
+    margin: 5px 10px; // height: 20px;
+    cursor: pointer;
+    color: white !important;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.tag-orange {
+    background-color: #ed764e;
+}
+
+.tag-red {
+    background-color: #ee5d2c;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w15 {
+    width: 15%;
+}
+
+.w20 {
+    width: 20%;
+}
+
+.table > tbody > tr > td {
+    text-align: center;
+}

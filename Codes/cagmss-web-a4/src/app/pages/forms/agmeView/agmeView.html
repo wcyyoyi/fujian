@@ -1,0 +1,53 @@
+<div class="form-horizontal">
+    <ba-card title="农业观测图片查询" baCardClass="with-scroll" class="setting-container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">上报人员</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" [(ngModel)]="selUsername" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">农业观测地点</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" [ngModel]="selArea" (ngModelChange)="onAreaChange($event)">
+                            <!-- <option [ngValue]="null" selected>全部</option> -->
+                            <option *ngFor="let item of cropAreaList" [ngValue]="item">{{item.cName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">上报时间</label>
+                    <div class="col-sm-7">
+                        <!-- <input type="text" class="form-control" readonly [ngModel]="nowTime.toLocaleString()" /> -->
+                        <input type="text" class="form-control" [(ngModel)]="date" [bsConfig]="bsConfig" bsDatepicker [maxDate]="now">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">作物类型</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" [ngModel]="selCropItem" (ngModelChange)="onCropItemChange($event)">
+                            <option [ngValue]="null" selected>全部</option>
+                            <option *ngFor="let crop of cropNameList" [ngValue]="crop">{{crop.cName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2" style="justify-content: center">
+            <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="search()">查询</button>
+        </div>
+    </ba-card>
+</div>
+
+<div class="form-horizontal">
+    <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+    <ba-card title="查询结果" baCardClass="with-scroll" class="setting-container">
+        <div style="height:500px;">
+            <ba-grid #grid [settings]="settings" [source]="source"></ba-grid>
+        </div>
+    </ba-card>
+</div>

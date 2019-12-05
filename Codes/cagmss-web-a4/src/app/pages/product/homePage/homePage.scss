@@ -1,0 +1,76 @@
+@import '../../scss/_color.scss';
+span.tag {
+    color: #ffffff;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 0 10px;
+    display: inline-block;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+$carouselHeight: 124px;
+.myCarousel {
+    height: $carouselHeight;
+    .title {
+        width: 100%;
+        height: $carouselHeight;
+        position: absolute;
+        color: #ffffff;
+        font-size: 64px;
+        text-align: center;
+        span {
+            line-height: $carouselHeight;
+        }
+    }
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    position: absolute;
+}
+
+a.carousel-control-prev,
+a.carousel-control-next {
+    margin-top: 30px;
+    height: $carouselHeight;
+}
+
+.breadcrumb-item.active {
+    font-weight: bold;
+    pointer-events: none
+}
+
+.select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.img_div {
+    position: relative;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(101, 101, 101, 0.6);
+    color: #ffffff;
+    opacity: 0;
+    img{
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 19px);
+    }
+}
+.mask h3 {
+    margin: 0;
+    height: 100%;
+}
+.img_div .mask:hover  {
+    opacity: 1;           
+}

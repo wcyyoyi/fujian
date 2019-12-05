@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left" title="{{title}}">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" style="overflow: auto">
+    <img *ngIf="prodList.length>1" src="../../../../assets//img/images/last.png" (click)="pagination(-1)" alt=""
+        style="position: absolute;top:8%;left:5%;cursor: pointer;z-index: 100;">
+    <img *ngIf="prodList.length>1" src="../../../../assets//img/images/next.png" (click)="pagination(1)" alt=""
+        style="position: absolute;top:8%;right:5%;cursor: pointer;z-index: 100;">
+    <pdf-viewer [src]="pdfSrc" [page]="5" [original-size]="false" style="display: block;"></pdf-viewer>
+    <div *ngIf="prodList.length>1" class="text-center">
+        <span>{{num+1}}/{{prodList.length}}</span>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">关闭</button>
+</div>

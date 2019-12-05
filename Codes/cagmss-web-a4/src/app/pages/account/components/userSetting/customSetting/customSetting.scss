@@ -1,0 +1,19 @@
+
+fieldset {
+    width: 100%;
+    padding: .35em 1em .75em;
+    border: 1px solid silver;
+    margin-bottom: 1em
+}
+
+legend {
+    padding: 0 .5em;
+    border: 0;
+    width: auto;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#id .card > .card-header{
+    background-color: #666666;
+}

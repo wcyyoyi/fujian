@@ -1,0 +1,83 @@
+[
+    {
+        "text": "",
+        "expand": true,
+        "itemList": [
+            {
+                "field": "TAV",
+                "ruler": "",
+                "text": "平均气温"
+            },
+            {
+                "field": "TMX",
+                "ruler": "",
+                "text": "最高气温"
+            },
+            {
+                "field": "TMI",
+                "ruler": "",
+                "text": "最低气温"
+            },
+            {
+                "field": "TAT",
+                "ruler": "",
+                "text": "积温"
+            },
+            {
+                "field": "TAD",
+                "ruler": "",
+                "text": "气温距平"
+            },
+            {
+                "field": "TAL",
+                "ruler": "",
+                "text": "气温同期对比"
+            },
+            {
+                "field": "RRR",
+                "ruler": "",
+                "text": "累计降水"
+            },
+            {
+                "field": "RRD",
+                "ruler": "",
+                "text": "降水距平"
+            },
+            {
+                "field": "RRL",
+                "ruler": "",
+                "text": "降水同期对比"
+            },
+            {
+                "field": "RDP",
+                "ruler": "",
+                "text": "降水距平百分率"
+            },
+            {
+                "field": "SSH",
+                "ruler": "",
+                "text": "日照时数"
+            },
+            {
+                "field": "SSD",
+                "ruler": "",
+                "text": "日照距平"
+            },
+            {
+                "field": "SSL",
+                "ruler": "",
+                "text": "日照同期对比"
+            },
+            {
+                "field": "SDP",
+                "ruler": "",
+                "text": "日照距平百分率"
+            }
+            
+
+            
+            
+        ],
+        "children": []
+    }
+]

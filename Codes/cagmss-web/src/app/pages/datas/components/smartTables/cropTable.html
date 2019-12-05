@@ -1,0 +1,18 @@
+<div class="form-horizontal">
+
+  <ba-card title="作物管理" baCardClass="with-scroll">
+    <ng2-smart-table [settings]="customSettings" [source]="source" 
+        (deleteConfirm)="onDeleteConfirm($event)" 
+        (editConfirm)="onEditConfirm($event)" 
+        (createConfirm)="onCreateConfirm($event)" 
+        (rowSelect)="onRowSelected($event)"></ng2-smart-table>
+  </ba-card>
+
+  <ba-card title="作物发育期" baCardClass="with-scroll">
+    <ng2-smart-table [settings]="devSettings" [source]="devSource" 
+        (deleteConfirm)="onDevDeleteConfirm($event)" 
+        (editConfirm)="onDevEditConfirm($event)" 
+        (createConfirm)="onDevCreateConfirm($event)"></ng2-smart-table>
+  </ba-card>
+
+</div>

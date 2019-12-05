@@ -1,0 +1,103 @@
+<div class="form-horizontal">
+    <ba-card title="信息选择" baCardClass="with-scroll">
+        <div class="form-group row">
+            <label for="txtCrop" class="col-sm-2 control-label">区域选择</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" (click)="showAreaInfo('区域选择')" readonly [ngModel]="selStationInfo" />
+                <!-- <button class="btn btn-primary" (click)='lgModal.show()' #btn>区域选择</button> -->
+            </div>
+            <label for="txtCrop" class="col-sm-2 control-label">作物</label>
+            <div class="col-sm-3">
+                <select class="form-control" id="txtCrop" placeholder="作物" [ngModel]="selCropItem" (ngModelChange)="onCropItemChange($event)">
+                    <option *ngFor="let crop of cropListShow" [ngValue]="crop">{{crop.desc}}</option>
+                </select>
+            </div>
+            <div class="col-sm-2 control-label">
+                <button type="button" class="btn btn-primary" (click)="addCrop(selCropItem)">添加</button>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="txtStartTime" class="col-sm-2 control-label">开始时间</label>
+
+            <div class="col-sm-3">
+                <div style="width:130px;">
+                    <date-choose (onChange)="setStartDate($event)" [initDate]="startDate"></date-choose>
+                </div>
+                <!-- <input type="text" class="form-control" id="txtStartTime" [bsConfig]="bsConfig" [(ngModel)]="startDate" (ngModelChange)="onChange($event)"
+                    placeholder="请选择开始时间" bsDatepicker> -->
+            </div>
+
+            <label for="txtEndTime" class="col-sm-2 control-label">结束时间</label>
+
+            <div class="col-sm-3">
+                <div style="width:130px;">
+                    <date-choose (onChange)="setEndDate($event)" [initDate]="endDate"></date-choose>
+                </div>
+                <!-- <input type="text" class="form-control" id="txtEndTime" [bsConfig]="bsConfig" [(ngModel)]="endDate" (ngModelChange)="onChange($event)"
+                    placeholder="请选择结束时间" bsDatepicker> -->
+            </div>
+
+            <div class="col-sm-2 control-label">
+                <button type="button" class="btn btn-primary" (click)="addDate()">添加</button>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="txtVarieties" class="col-sm-2 control-label">熟性</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtVarieties" placeholder="品种" [ngModel]="selVariItem" (ngModelChange)="onVariChange($event)">
+                    <option *ngFor="let cm of selItemCropmatures" [value]="cm">{{cm}}</option>
+                </select>
+            </div>
+
+            <label for="txtCropDev" class="col-sm-2 control-label">发育期</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtCropDev" placeholder="发育期" [ngModel]="selDevItem" (ngModelChange)="onDevChange($event)">
+                    <option *ngFor="let cropDev of cropDevList" [ngValue]="cropDev">{{cropDev.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-2 control-label">
+                <button type="button" class="btn btn-primary" (click)="addCropType()">添加</button>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="txtDist" class="col-sm-2 control-label">灾害</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtDist" placeholder="灾害" [ngModel]="selDistItem" (ngModelChange)="onDistChange($event)">
+                    <option *ngFor="let dist of distList" [ngValue]="dist">{{dist.desc}}</option>
+                </select>
+            </div>
+
+            <label for="txtIndexType" class="col-sm-2 control-label">指标类型</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtIndexType" placeholder="指标类型" [ngModel]="selIndexTypeItem" (ngModelChange)="onIndexTypeChange($event)">
+                    <option *ngFor="let idxt of indexTypeList" [ngValue]="idxt">{{idxt.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-2 control-label">
+                <button type="button" class="btn btn-primary" (click)="addDist()">添加</button>
+            </div>
+        </div>
+    </ba-card>
+    <ba-card title="作物信息" baCardClass="with-scroll">
+        <div class="crop-list">
+            <tabset>
+                <tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (select)="onTabSelect(tabz)" (deselect)="tabz.active = false"
+                    [disabled]="tabz.disabled" [removable]="tabz.removable" (removed)="removeTabHandler(tabz)" [customClass]="tabz.customClass">
+                    <crop-info [cropItem]="tabz.key" [cropInfoList]="tabz.data" (onInfoChanged)="onInfoChanged($event)" (onDistClicked)="onDistClicked($event)"></crop-info>
+                    <div class="idx-btn-save">
+                        <button type="button" class="btn btn-primary" (click)="onSubmit(tabz.key)"> 提 交 </button>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </ba-card>
+</div>

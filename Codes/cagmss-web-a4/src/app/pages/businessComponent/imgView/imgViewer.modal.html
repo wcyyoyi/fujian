@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left" title="{{title}}">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <img src="../../../../assets//img/images/last.png" (click)="pagination(-1)" alt=""
+        style="position: absolute;top:48%;left:5%;cursor: pointer;">
+    <img src="../../../../assets//img/images/next.png" (click)="pagination(1)" alt=""
+        style="position: absolute;top:48%;right:5%;cursor: pointer;">
+    <div class="text-center p-3" style="margin: 10px 100px">
+        <!-- draggable="false" 禁止拖拽图片 -->
+        <img src={{src}} id="img" (mousewheel)="rollImg($event)" draggable="false">
+    </div>
+    <div class="row" style="width: 100%;padding: 20px 0;">
+        <span class="col-md-3"></span>
+        <span class="col-md-6 text-center">{{num+1}}/{{imgList.length}}</span>
+    </div>
+</div>

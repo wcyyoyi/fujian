@@ -1,0 +1,67 @@
+<div class="form-group">
+    <label for="txtStation" class="control-label">站点列表</label>
+
+    <select multiple class="form-control" id="txtStation" (change)="onChange($event.target.options)">
+        <option *ngFor="let statItem of statList" value="{{statItem.v01000}}">
+            {{statItem.cStatName}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cTypestation}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cCity}}
+        </option>
+    </select>
+</div>
+<!-- <div class="form-group">
+    <div>
+        <label for="txtStation" class="control-label">站点列表</label>
+        <a class="float-right" data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">
+            筛选
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <select multiple class="form-control pr-0" id="txtStation" (change)="onChange($event.target.options)">
+                <option *ngFor="let statItem of statShowList" value="{{statItem.v01000}}">
+                    {{statItem.cStatName}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cTypestation}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cCity}}
+                </option>
+            </select>
+            <div class="collapse col-6 p-0" id="collapse" style="position: absolute;right: 0;top:0;max-height: 150px; overflow: auto;">
+                <div class="bg-light rounded border p-3">
+                    <div class="mb-2">
+                        <div class="row m-0 mb-1">站点类型:</div>
+                        <div class="row m-0">
+                            <ng-container *ngFor="let item of staTypeList">
+                                <label class="col-4 p-0">
+                                    <input type="checkbox" name="staType" (change)="updateStaTypeCheckedOptions(item,$event)"> {{item}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-2">
+                        <div class="row m-0 mb-1">所属地区:</div>
+                        <div class="row m-0">
+                            <ng-container *ngFor="let item of areaList">
+                                <label class="col-6 p-0">
+                                    <input type="checkbox" name="area" (change)="updateAreaCheckedOptions(item,$event)"> {{item}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-2">
+                        <div class="row m-0 mb-1">所属城市:</div>
+                        <div class="row m-0">
+                            <ng-container *ngFor="let item of cityList">
+                                <label class="col-4 p-0">
+                                    <input type="checkbox" name="city" (change)="updateCityCheckedOptions(item,$event)"> {{item}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="row m-0">
+                            <button class="rounded tag tag-orange col" (click)="reset()">重置</button>
+                            <button class="rounded tag tag-red col" (click)="selectSta()">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->

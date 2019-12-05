@@ -1,0 +1,80 @@
+<div class="form-horizontal form-group row">
+    <label for="txtStartTime" class="col-sm-1 control-label">开始时间</label>
+
+    <div class="col-sm-3" [ngClass]="{'col-sm-5':!hourShow}">
+        <input type="text" class="form-control" id="txtStartTime" [(ngModel)]="startDate" [bsConfig]="bsConfig"
+            (ngModelChange)="onChange($event)" placeholder="请选择开始时间" bsDatepicker [maxDate]="now" *ngIf="level==1"
+            readonly>
+        <input type="text" class="form-control" id="txtStartTime" [(ngModel)]="startDate" [bsConfig]="bsConfig"
+            (ngModelChange)="onChange($event)" placeholder="请选择开始时间" bsDatepicker [maxDate]="now" [minDate]="minDate"
+            readonly *ngIf="level!=1">
+    </div>
+    <div class="col-sm-1 input-group" *ngIf="hourShow">
+        <select class="form-control rounded" id="txtStartHour" [(ngModel)]="startHour"
+            (ngModelChange)="onChange($event)">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+        </select>
+    </div>
+    <label class="control-label col-sm-1" *ngIf="hourShow">时</label>
+    <label for="txtEndTime" class="col-sm-1 control-label">结束时间</label>
+    <div class="col-sm-3" [ngClass]="{'col-sm-5':!hourShow}">
+        <input type="text" class="form-control" id="txtEndTime" [(ngModel)]="endDate" [bsConfig]="bsConfig"
+            (ngModelChange)="onChange($event)" placeholder="请选择结束时间" bsDatepicker [maxDate]="now" *ngIf="level==1"
+            readonly>
+        <input type="text" class="form-control" id="txtEndTime" [(ngModel)]="endDate" [bsConfig]="bsConfig"
+            (ngModelChange)="onChange($event)" placeholder="请选择结束时间" bsDatepicker [maxDate]="now" [minDate]="minDate"
+            *ngIf="level!=1" readonly>
+    </div>
+    <div class="col-sm-1 input-group" *ngIf="hourShow">
+        <select class="form-control rounded" id="txtEndHour" [(ngModel)]="endHour" (ngModelChange)="onChange($event)">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+        </select>
+    </div>
+    <label class="control-label col-sm-1" *ngIf="hourShow">时</label>
+</div>

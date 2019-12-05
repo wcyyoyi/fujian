@@ -1,0 +1,113 @@
+<div class="h-100" style="overflow: hidden;">
+    <div class="row w-100 m-0" style="height: 5%;">
+        <nav aria-label="breadcrumb" class="w-100">
+            <ol class="breadcrumb mb-0" style="background-color: transparent;">
+                <li *ngIf="makeCompany !== baseMakeCompany" class="breadcrumb-item">
+                    <a class="text-secondary" [routerLink]="['../../homePage',makeCompany.cPCode]">[&nbsp;&nbsp;{{makeCompany.cName}}</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span class="text-dark">概况&nbsp;&nbsp;]</span>
+                </li>
+                <a class="text-secondary float-right " [routerLink]="['display',makeCompany.cPCode]">[&nbsp;分类查看&nbsp;]</a>
+            </ol>
+        </nav>
+    </div>
+    <div class="row w-100 m-0" style="height: 563px;">
+        <div class="col-md-8 p-0">
+            <div style="overflow: auto;">
+                <!-- <h3>&nbsp;&nbsp;&nbsp;&nbsp;3月份全省气温正常到偏高，降水量正常到偏少，日照正常。有利方面是后半月热量条件良好，有利于春播春植及作物和果树的生长发育；月雨日多有利于森林防火。不利方面是前半月的持续低温阴雨寡照对春播和作物生长不利，14～15日，北部地区出现大雨到暴雨天气，对作物生长略为不利。</h3> -->
+            </div>
+            <!-- *ngIf="isImgsLoading" -->
+            <div *ngIf="isImgsLoading">
+                <img class="d-block m-auto" src="../../../../assets/prodDisplay/icon/loading.gif" style="width: 50px;">
+            </div>
+            <div style="background-color: white;max-width: 800px; margin: auto">
+                <div *ngIf="imgList.length>0" id="slides" class="carousel slide border pl-5 pr-5" data-ride="carousel" #carousel>
+                    <!-- carousel-vertical/fade -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#slides" data-slide-to="0" class="active"></li>
+                        <li data-target="#slides" data-slide-to="1"></li>
+                        <li data-target="#slides" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <ng-container *ngFor="let imgRow of imgList;let i = index">
+                            <div *ngIf="i==0" class="carousel-item active">
+                                <ng-container *ngFor="let item of imgRow;">
+                                    <img class="d-block w-50 float-left" src={{item.url}} (click)="imgDetail(pictures,item.num)">
+                                </ng-container>
+                            </div>
+                            <div *ngIf="i!=0" class="carousel-item">
+                                <ng-container *ngFor="let item of imgRow;">
+                                    <img class="d-block w-50 float-left" src={{item.url}} (click)="imgDetail(pictures,item.num)">
+                                </ng-container>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#slides" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#slides" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 pl-3">
+            <div style="margin-bottom: 10px;">
+                <div class="pl-3 bg-title">
+                    <span class="text-light">
+                        <i class="finder"></i>农业气象情报
+                        <i class="loading float-right" *ngIf="isWcrmLoading"></i>
+                    </span>
+                </div>
+                <div class="bg-light" style="height: 205px;">
+                    <!-- <p *ngIf="wcrmShowList.length == 0">该地区没有此类产品</p> -->
+                    <ul class="list-group" *ngIf="wcrmList.length > 0">
+                        <li *ngFor="let item of wcrmShowList" class="list-group-item">
+                            <a style="cursor: pointer;" (click)="wordDetail(item.num,'WCRM','mont')">{{item.cnName}}</a>
+                            <small class="float-right">{{item.date}}</small>
+                        </li>
+                        <li *ngIf="wcrmList.length > 4" class="list-group-item" style="border-radius:0">
+                            <a class="float-left" style="cursor: pointer;" (click)="pageChanged(0,4)">&lt;&nbsp;上一页</a>
+                            <a class="float-right" style="cursor: pointer;" (click)="pageChanged(4,wcrmList.length)">下一页&nbsp;&gt;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <div class="pl-3 bg-title">
+                    <span class="text-light">
+                        <i class="sun"></i>农业天气预报</span>
+                    <i class="loading float-right" *ngIf="isAwfcLoading"></i>
+                </div>
+                <div class="bg-light" style="height: 123px;">
+                    <!-- <p *ngIf="awfcList.length == 0">该地区没有此类产品</p> -->
+                    <ul class="list-group" *ngIf="awfcList.length > 0">
+                        <li *ngFor="let item of awfcList" class="list-group-item">
+                            <a style="cursor: pointer;" (click)="wordDetail(item.num,'AWFC')">{{item.cnName}}</a>
+                            <small class="float-right">{{item.date}}</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="pl-3 bg-title">
+                    <span class="text-light">
+                        <i class="overlap"></i>实时数据</span>
+                    <i class="loading float-right" *ngIf="isAwfcLoading"></i>
+                </div>
+                <div class="bg-light" style="height: 110px;">
+                    <div class="pl-3 pt-1 row">
+                        <ng-container *ngFor="let custom of customList">
+                        <a class="rounded tag {{custom.color}}" (click)="imgDetail(custom.list,1)">
+                                {{custom.name}}
+                            </a>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

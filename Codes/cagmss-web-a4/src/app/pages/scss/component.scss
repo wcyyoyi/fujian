@@ -1,0 +1,24 @@
+@import '_color.scss';
+@import '_font.scss';
+@import '_level1.scss';
+@import '_level2.scss';
+@import '_level3.scss';
+button.yz-btn {
+    color: #ffffff;
+    &-level1 {
+        background-color: $yz-level1-primary3
+    }
+    &-level2 {
+        background-color: $yz-level2-primary3
+    }
+    &-level3 {
+        background-color: $yz-level3-primary3
+    }
+}
+.close:hover {
+    background: none;
+    text-decoration: none;
+}
+.modal-content {
+    border: none;
+}

@@ -1,0 +1,17 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">站点选择</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body pb-0" style="margin: 0 16px;">
+        <yz-ngx-station [settings]="settings" [source]="source" [level]="level" [definitionList]="definitionList"
+            [checkedStatNum]="checkedStatNum" (stationArr)="stationSelected($event)"
+            (addDefinition)='addDefinition($event)'>
+        </yz-ngx-station>
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

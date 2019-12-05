@@ -1,0 +1,32 @@
+<table>
+    <tr>
+        <td class="text-center">
+            <a class="ion-chevron-up" (click)="changeMonthByClick(1)" style="cursor: pointer;"></a>
+        </td>
+        <td></td>
+        <td class="text-center">
+            <a class="ion-chevron-up" (click)="changeDayByClick(1)" style="cursor: pointer;"></a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" class="form-control text-center" [(ngModel)]="month" (mousewheel)="changeMonthByWheel($event)" (blur)="changeMonthByInput($event)">
+        </td>
+        <td>月</td>
+        <td>
+            <input type="text" class="form-control text-center" [(ngModel)]="day" (mousewheel)="changeDayByWheel($event)" (blur)="changeDayByInput($event)">
+        </td>
+        <td>日</td>
+    </tr>
+    <tr>
+        <td class="text-center">
+            <a class="ion-chevron-down" (click)="changeMonthByClick(-1)" style="cursor: pointer;"></a>
+        </td>
+        <td></td>
+        <td class="text-center">
+            <a class="ion-chevron-down" (click)="changeDayByClick(-1)" style="cursor: pointer;"></a>
+        </td>
+        <td></td>
+    </tr>
+</table>

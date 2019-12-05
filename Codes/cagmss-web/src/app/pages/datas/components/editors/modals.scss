@@ -1,0 +1,36 @@
+@import "../../../../theme/sass/conf/conf";
+
+.modal-footer .btn {
+  margin-right: 20px;
+  background: #00abff;
+  border-color: #00abff;
+  color: #fff;
+  &:hover{
+    background: #00abff;
+    border-color: #0093e7;
+  }
+}
+
+.modal-body {
+  color: $dropdown-text;
+  select{
+    height: 30px;
+    padding: 0;
+  }
+  input{
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    height: 30px;
+    width: 100%;
+    padding: 2px;
+    &:focus{
+      color: #666666;
+      box-shadow: none;
+      border-color: #f1f1f1;
+      background: #ffffff;
+    }
+  }
+  .input-group-addon{
+    height: 30px;
+  }
+}

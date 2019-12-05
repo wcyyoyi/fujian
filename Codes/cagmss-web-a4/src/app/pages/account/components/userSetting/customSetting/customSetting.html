@@ -1,0 +1,146 @@
+<div class="form-horizontal">
+    <ba-card title="自定义配置" baCardClass="with-scroll">
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">行政区代码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" readonly value="{{userConfig.area.code}}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">区域编码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" readonly value="{{userConfig.area.pCode}}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">服务器地址</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="userConfig.area.serviceUrl" />
+            </div>
+        </div>
+    </ba-card>
+    <ba-card title="首页关注模块" baCardClass="with-scroll">
+        <!-- <div class="form-group row">
+            <label class="col-sm-2 control-label">制作单位</label>
+            <div class="col-sm-6">
+                <select class="form-control" [ngModel]="selUnit" (ngModelChange)="onElementChange($event);">
+                    <option *ngFor="let unit of unitList" [ngValue]="unit.cCode">{{unit.cName}}</option>
+                </select>
+            </div>
+        </div> -->
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">数据内容</label>
+            <div class="col-sm-6">
+                <select class="form-control" [ngModel]="selDetail" (ngModelChange)="onDetailChange($event);">
+                    <option *ngFor="let type of typeList" [ngValue]="type.value">{{type.desc}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">数据要素</label>
+            <div class="col-sm-6">
+                <select class="form-control" [ngModel]="selElement" (ngModelChange)="onElementChange($event);">
+                    <option *ngFor="let element of elementList" [ngValue]="element.element">{{element.name}}</option>
+                </select>
+            </div>
+        </div>
+        <!-- <div class="form-group row">
+            <label class="col-sm-2 control-label">产品时间</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)]="attention.productDate" />
+            </div>
+            <div class="col-sm-4">
+                <span *ngIf="selElement=='MONT'">"00000000"为最新发布月报。选择年份、月份(如若年份为最新年份则为0000，最新月份则为00，后两位固定为01)</span>
+                <span
+                    *ngIf="selElement=='TEND'">"00000000"为最新发布旬报。选择年份、月份、旬(如若年份为最新年份则为0000，最新月份则为00，上旬为01，中旬为11，下旬为21)</span>
+                <span *ngIf="selElement=='WEEK'">"00000000"为最新发布周报。选择年份、周数(如若年份为最新年份则为0000，月份固定为00，最新周数为00)</span>
+                <span *ngIf="selElement=='SPRS-PLO-SOW'">"00000000"为最新发布春耕春播报文</span>
+                <span *ngIf="selElement=='SUMS-HAR-SOW'">"00000000"为最新发布夏收夏种报文</span>
+                <span *ngIf="selElement=='AUTS-HAR-SOW'">"00000000"为最新发布秋收秋种报文</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">截取位置</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)]="attention.positions" />
+                <span></span>
+            </div>
+            <div class="col-sm-4">
+                <span>数字为正则为正文正数第几段，数字为负则为正文倒数第几段</span>
+            </div>
+        </div> -->
+    </ba-card>
+    <ba-card title="产品展示模块" baCardClass="with-scroll" id="card">
+        <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="addNewConfig()"
+            style="position: absolute;top: 5px;right: 22px;">添加</button>
+        <div class="row">
+            <!-- <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="addModal()" style="margin: auto" style="margin: 0 15px 15px;">添加</button> -->
+            <div class="col-12" *ngFor="let config of configs">
+                <fieldset>
+                    <legend><span><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<input type="text" class="dataType"
+                                [(ngModel)]="config.tagName" style="text-align: center"></span></legend>
+                    <div class="form-group row">
+                        <div class="col-sm-6 row">
+                            <label class="col-sm-2 control-label">数据类型</label>
+                            <input type="text" class="form-control col-sm-10" [(ngModel)]="config.dataType" />
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="add(config)"
+                                style="margin: auto">添加</button>
+                            <button class="btn yz-btn" [ngClass]="btnClassLevel" style="margin: auto"
+                                (click)="deleteConfig(config)">删除</button>
+                        </div>
+                        <div class="col-sm-3 row">
+                            <label class="col-sm-4 control-label">排序</label>
+                            <input type="number" class="form-control col-sm-8" [(ngModel)]="config.id" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 border-top p-3" *ngFor="let child of config.children;let i = index"
+                            [ngClass]="{ 'border-right' : i%2 !==1 }">
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label"><i class="fa fa-tag"
+                                        aria-hidden="true"></i>&nbsp;标签名称</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" [(ngModel)]="child.tagName" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label">数据元素</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" [(ngModel)]="child.dataEles" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label">产品类型</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" [(ngModel)]="child.dataFormat" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label">展示数量</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" [(ngModel)]="child.count" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="delete(config,child)"
+                                    style="margin: auto">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <label class="col-3 text-center"><input type="checkbox" [(ngModel)]="isForChildren">是否应用到子区域</label>
+        </div>
+        <div class="form-group row justify-content-center">
+            <div class="col-sm-3 text-center">
+                <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="update()">提交</button>
+            </div>
+        </div>
+    </ba-card>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

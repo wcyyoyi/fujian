@@ -1,0 +1,44 @@
+<div>
+    <div class="mb-2">
+        <input type="file" ng2FileSelect [uploader]="uploader" multiple style="color: transparent;border: none" />
+        <!-- <p>Queue length: {{ uploader?.queue?.length }}</p> -->
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">&nbsp;</th>
+                    <th class="text-center">文件名</th>
+                    <th class="text-center">文件大小</th>
+                    <th class="text-center">缩略图</th>
+                    <th class="text-center">状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of uploader.queue;let i = index">
+                    <td>
+                        <a (click)="item.remove()" style="cursor: pointer;">
+                            &times;
+                        </a>
+                    </td>
+                    <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;max-width: 40px;">
+                        <a title="{{item?.file?.name}}"><strong>{{ item?.file?.name }}</strong></a>
+                    </td>
+                    <td nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                    <td>
+                        <img [src]="imgUrlList[i]" style="width: 40px;max-height: 30px;">
+                    </td>
+                    <td>
+                        <span *ngIf="item.isSuccess">上传成功</span>
+                        <span *ngIf="item.isUploading">正在上传</span>
+                        <span *ngIf="item.isError">上传失败</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="row progress" *ngIf="isUploading">
+        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+    </div> -->
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

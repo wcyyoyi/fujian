@@ -1,0 +1,109 @@
+<div class="modal-body">
+    <div class="bg-light rounded border p-3">
+        <div class="mb-2" *ngIf="proListShow.length>0">
+            <div class="row m-0 mb-1">省级:</div>
+            <div class="row m-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item" *ngFor="let item of proListShow;">
+                        <a class="nav-link p-2" (click)="selectDistrict(item)" data-toggle="pill" style="cursor: pointer;"> {{item.cName}}</a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="mb-2" *ngIf="cityListShow.length>0">
+            <div class="row m-0 mb-1">市级:</div>
+            <div class="row m-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item" *ngFor="let item of cityListShow;">
+                        <a class="nav-link" (click)="selectDistrict(item)" data-toggle="pill" style="cursor: pointer;"> {{item.cName}}</a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="mb-2" *ngIf="counListShow.length>0">
+            <div class="row m-0 mb-1">县级:</div>
+            <div class="row m-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item" *ngFor="let item of counListShow;">
+                        <a class="nav-link" (click)="selectDistrict(item)" data-toggle="pill" style="cursor: pointer;"> {{item.cName}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <!-- <span> 共{{table.source.data.length}}个站点</span> -->
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="form-group">
+    <label for="txtStation" class="control-label">站点列表</label>
+
+    <select multiple class="form-control" id="txtStation" (change)="onChange($event.target.options)">
+        <option *ngFor="let statItem of statList" value="{{statItem.v01000}}">
+            {{statItem.cStatName}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cTypestation}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cCity}}
+        </option>
+    </select>
+</div> -->
+<!-- <div class="form-group">
+    <div>
+        <label for="txtStation" class="control-label w-100">站点列表
+            <a class="float-right" data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">
+                筛选
+            </a>
+        </label>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <select size="{{size}}" class="form-control pr-0" id="txtStation" (change)="onChange($event.target.options)">
+                <option *ngFor="let statItem of statShowList" value="{{statItem.v01000}}">
+                    {{statItem.cStatName}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cTypestation}}&nbsp;&nbsp;&nbsp;&nbsp;{{statItem.cCity}}
+                </option>
+            </select>
+            <div class="collapse col-6 p-0" id="collapse" style="position: absolute;right: 0;top:0;max-height: 150px; overflow: auto;z-index: 1050;">
+                <div class="bg-light rounded border p-3">
+                    <div class="mb-2">
+                        <div class="row m-0 mb-1">站点类型:</div>
+                        <div class="row m-0">
+                            <ng-container *ngFor="let item of staTypeList">
+                                <label class="col-4 p-0">
+                                    <input type="checkbox" name="staType" (change)="updateStaTypeCheckedOptions(item,$event)"> {{item}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-2">
+                        <div class="row m-0 mb-1">所属地区:</div>
+                        <div class="row m-0">
+                            <ng-container *ngFor="let item of areaList">
+                                <label class="col-6 p-0">
+                                    <input type="checkbox" name="area" (change)="updateAreaCheckedOptions(item,$event)"> {{item}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-2">
+                        <div class="row m-0 mb-1">所属城市:</div>
+                        <div class="row m-0">
+                            <ng-container *ngFor="let item of cityList">
+                                <label class="col-4 p-0">
+                                    <input type="checkbox" name="city" (change)="updateCityCheckedOptions(item,$event)"> {{item}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="row m-0">
+                            <button class="rounded tag tag-orange col" (click)="reset()">重置</button>
+                            <button class="rounded tag tag-red col" (click)="selectSta()">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->

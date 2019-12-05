@@ -1,0 +1,29 @@
+<div class="w-100 h-100" style="position: relative;">
+
+    <ag-grid-angular #agGrid class="ag-theme-balham w-100 h-100" [rowData]="source" [enableFilter]="isFilter"
+        [columnDefs]="settings" [localeText]="localeText" [paginationAutoPageSize]="isAutoPageSize"
+        [pagination]="isPager" [paginationPageSize]="pageSize" [enableColResize]="true"
+        [frameworkComponents]="frameworkComponents" [enableSorting]="isSort" (filterChanged)="onfilterChanged($event)"
+        [rowSelection]="rowSelection" [suppressRowClickSelection]="false" (gridReady)="onGridReady($event)"
+        (rowSelected)="onRowSelected($event)" (selectionChanged)="onSelectionChanged($event)" >
+    </ag-grid-angular>
+
+    <div class="exportCSV" *ngIf="isDataExport">
+        <button class="btn yz-btn exportBtn" [ngClass]="btnClassLevel" (click)="export()">
+            <i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;导出CSV
+        </button>
+    </div>
+    <div class="toolBar" *ngIf="isFieldSelection">
+        <div class="toolBar-tag">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i><br> 列选择
+        </div>
+        <div class="toolBar-panel">
+            <ag-grid-angular #fieldGrid style="width: 100%; height: 400px;" class="ag-theme-balham"
+                [rowData]="fieldSource" [columnDefs]="fieldSettings" [localeText]="localeText"
+                [rowSelection]="fieldRowSelection" [suppressRowClickSelection]="true" [suppressHorizontalScroll]="true"
+                (rowSelected)="onFieldRowSelected($event)" (gridReady)="onFieldGridReady($event)"
+                (rowDataChanged)="fieldRowDataChanged($event)">
+            </ag-grid-angular>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+TileMill则是使用开源软件而制作的一个地图制图及地图发布的软件，TileMill是基于 Mapnik，node.js，backbone.js，express 等几个开源的软件构建起来的。其中，Mapnik提供地图的渲染，node.js及backbone.js等提供地图展示，地图配图使用Carto 的语言进行地图各个图层的配图样式等设计，语法简单可读性强。TileMill主要的功能有如下：
+1、支持 ESRI Shapefile, KML, GeoJSON, GeoTIFF, PostGIS, and SQLite数据来源。
+2、新版本支持大数据量栅格数据的加载与显示，支持山体阴影，分层设色等功能。
+3、支持数据的查询，也就是属性数据的浏览。
+4、支持以Carto css样式语言对地图进行配色设计（比xml要方便很多）
+5、支持svg图标，truetype字体样式等，基于Mapnik提供（mapnik2.0出来了又强大了不少）
+6、支持地图tooltip、图片、图表、utf-8 Grid(不是很了解这个技术)等自定义信息提示
+7、支持直接发布到Mapbox，和朋友共享你制作的地图。

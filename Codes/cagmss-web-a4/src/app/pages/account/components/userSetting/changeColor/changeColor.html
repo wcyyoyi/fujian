@@ -1,0 +1,12 @@
+<ba-card title="主题选择" baCardClass="with-scroll">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align: center">
+            <button class="btn yz-btn yz-btn-level1 theme" (click)="changeTheme(1)">主题一</button>
+            <button class="btn yz-btn yz-btn-level2 theme" (click)="changeTheme(2)">主题二</button>
+            <button class="btn yz-btn yz-btn-level3 theme" (click)="changeTheme(3)">主题三</button>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</ba-card>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

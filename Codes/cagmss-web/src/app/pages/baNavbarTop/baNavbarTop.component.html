@@ -1,0 +1,19 @@
+<ul class="nav nav-pills navbar-top">
+    <!--<li class="nav-item">
+        <a href="#" class="nav-link active">Active</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">Link</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">Another link</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link disabled">Disabled</a>
+    </li>-->
+    <ba-menu-item class="nav-item" [menuItem]="item" 
+        [ngClass]="{'selected': item.selected && !item.expanded}"
+        *ngFor="let item of menuItems"></ba-menu-item>
+
+</ul>
+<div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}" [ngClass]="{'show-hover-elem': showHoverElem }"></div>

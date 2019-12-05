@@ -1,0 +1,215 @@
+.body-level3{
+    main,.al-sidebar-right,.al-sidebar-left{
+        background-color: $main-bg-level3 !important;
+    }
+    .fadeImg{
+        position: absolute;
+        margin: 0 auto;
+        top: 0;
+        opacity: 1;
+        background-size: cover;
+        -webkit-backface-visibility: hidden;
+    }
+    .banner-bg{
+        background: url('/assets/img/images/banner-level3.png');
+    }
+    a.al-logo,.al-user-profile a{
+        color:$page-color-level3;
+    }
+    .navbar-top,.navbar-collapse{
+        background-color: $title-bg-level3;
+    }
+    .navbar-top a.al-sidebar-list-link-level3:hover{
+        color:$title-active-bg-level3;
+    }
+    .todo-title{
+        background-color: $card-title-bg-level3;
+        color:white;
+        border-bottom: 1px solid $crop-border-level3;
+    }
+    .crop{
+        border: 1px solid $crop-border-level3;
+    }
+    .cropSelected{
+        background-color:$crop-select-level3;
+    }
+    .card,.al-sidebar{
+        background-color: $card-bg-level3;
+    }
+    .fc-list-empty{
+        background-color: $empty-bg-level3;
+    }
+    .card-header{
+        background-image: none !important;
+        background-color: $card-title-bg-level3 !important;
+    }
+    .card-title{
+        color:$card-title-color-level3;
+    }
+    .product-item{
+        background-color: $common-bg-level3;
+    }
+    .navbar-top .al-sidebar-list-item.selected {
+        border-bottom: 3px solid $title-active-bg-level3;
+        color:$title-active-bg-level3;
+    }
+    .navbar-top a.al-sidebar-list-link{
+        color: $text-color-level3;
+    }
+    .right-about .card-body p{
+        color: $text-color-level3;
+        // span{
+        //     font-size: $font-size-12 !important;
+        // }
+        &:first-child{
+            color: $white-color;
+        }
+    }
+    a.collapse-menu-link {
+        background-image: url('/assets/img/images/logo-level3.png');
+    }
+    .al-sidebar-sublist > ba-menu-item > li.selected:not(.with-sub-menu) > a,.nav-pills .nav-link.active{
+        border-left: 4px solid $aside-border-level3;
+        color: $white-color;
+        background-color: $aside-bg-level3;
+        border-radius: 0;
+    }
+    .crop-list .nav-tabs > li.active > a,.list-group-item.active,.c-token,.modal-header{
+        background-color: $main-bg-level3 !important;
+        color:$white-color !important;
+        border: none !important;
+        border-radius: 0;
+    }
+    .ba-sidebar-item-expanded>a,button.yz-btn-level3,.nav.nav-tabs > li.active > a,span.tag,.btn-primary,
+    .radio-label input[type="radio"]:checked + span{
+        background-color: $aside-border-level3;
+        color: $white-color !important;
+    }
+    .al-sidebar-sublist > ba-menu-item > li a,.nav-justified .nav-item a,.nav{
+        color: $text-color-level3;
+        font-size: $font-size-14;
+    }
+    a.al-sidebar-list-link,a.al-sidebar-list-link b{
+        color: $aside-border-level3;
+    }
+    .form-group label,.form-control{
+        color: $white-color;
+    }
+    .container{
+        color: $white-color;
+    }
+    .modal-body select{
+        border: 1px solid $text-color-level3;
+        background-color: $white-color;
+    }
+    .card-body input,select{
+        border: 1px solid $text-color-level3;
+        background-color: $card-title-bg-level3;
+    }
+    .card-header{
+        border-bottom: 1px solid $header-border-level3;
+    }
+    .card.crop-detail .row,.card.crop-detail .nav.nav-tabs{
+        background-color: $aside-bg-level3;
+    }
+    .card.crop-detail .list-group-item{
+        background-color: $aside-bg-level3;
+        border-bottom: 1px solid $text-color-level3 !important;
+        color:$text-color-level3;
+    }
+    .card.crop-detail .nav-tabs > li.active > a,.card.crop-detail .list-group-item.active,.c-token,
+    .card.crop-detail .tab-content{
+        background-color:$title-bg-level3 !important;
+        border: none !important;
+        border-radius: 0;
+    }
+    .card.crop-detail .col-sm-9{
+        background-color:$tab-bg-level;
+    }
+    a{
+        color: $text-color-level3 !important;
+        &:hover{
+            color: $common-bg-level3 !important;
+        }
+    }
+    .modal-body .nav-pills .nav-link.active {
+        color: $aside-border-level3;
+        background-color: $aside-bg-level3;
+        border: 1px solid $header-border-level3;
+    }
+    .modal-body .nav-link{
+        background-color: $aside-bg-level3;
+    }
+    #img-container .bannerImg{
+        border: 1px solid $header-border-level3;
+    }
+    #img-container .col-sm-6{
+        border: 5px solid $header-border-level3;
+    }
+    .media{
+        color:grey;
+    }
+    .fileActive{
+        background-color: $main-bg-level3 !important;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    .custom-select{
+        background-color:white;
+    }
+    .btn-secondary {
+        background-color: $title-active-bg-level3;
+        border-color: $title-active-bg-level3;
+    }
+    input[readonly]{
+        color: white;
+    }
+    .modal-header .close{
+        color:white;
+    }
+    .ag-header-cell-menu-button{
+        opacity: 1 !important;
+    }
+    .card.quality .card-header{
+        background-color: #1e2b51 !important;
+    }
+    .button-list{
+        button{
+            background-color: #03bde2;
+        }
+    }
+    .jujube{
+        .text-center{
+            color: #ffffff;
+            .table-title{
+                background-color: #03bde2;
+                color: #ffffff;
+            }
+            .col-lg-1{
+                color: #ffffff;
+            }
+        }
+    }
+    .dataType{
+        color: white;
+    }
+    .quality-setting .col-lg-3,.quality-p,.jujube input{
+        color: #ffffff;
+    }
+    .maps-select{
+        background-color: #ffffff;
+    }
+    a.al-sidebar-list-link:hover {
+        color: #b0bce0 !important;
+    }
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+        border: 1px solid #b0bce0;
+        background-color: #1e2b51;
+        color: white;
+    }
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 2048px;
+    }
+}

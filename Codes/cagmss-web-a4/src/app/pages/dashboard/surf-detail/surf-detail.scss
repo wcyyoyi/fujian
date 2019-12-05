@@ -1,0 +1,36 @@
+.hourData span {
+    font-size: 13px;
+    yz-ngx-icon {
+        width: 20px;
+        display: inline-block;
+    }
+}
+
+#wind {
+    display: inline-block;
+    transform: rotate(180deg);
+    width: 15px;
+    font-size: 20px;
+}
+
+.modal-body div.row {
+    margin: 0;
+}
+.col-2{
+    color: #666666 !important;
+}
+.dataSelect{
+    background-color: white;
+    color: #666666 !important;
+}
+#dateLimit-choose button {
+    background-color: orange;
+    color: #ffffff;
+
+    &.active {
+        background-color: #4898e7;
+    }
+}
+.detail-modal{
+    min-width: 900px;
+}

@@ -1,0 +1,32 @@
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+  <a routerLink="/pages/dashboard" class="collapse-menu-link ion-navicon"></a>
+  <a routerLink="/pages/dashboard" class="al-logo clearfix">福建省农业与生态气象业务平台</a>
+
+  <!--<div class="search">
+    <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+    <input id="searchInput" type="text" placeholder="Search for...">
+  </div>-->
+  <div class="user-profile clearfix">
+    <div class="dropdown al-user-profile">
+      <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" 
+         aria-expanded="false" routerLink="/pages/account">
+        <img src="{{ ( 'Nasta' | baProfilePicture ) }}">
+        <span>{{name}}</span>
+      </a>
+      <div class="top-split"></div>
+      <a [routerLink]="['/login']" class="profile-toggle-link top-logout">
+        <i class="ion-log-out"></i>
+        <span>退出</span>
+      </a>
+      
+      <!--<ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
+        <li class="dropdown-item"><i class="dropdown-arr"></i></li>
+        <li class="dropdown-item"><a href><i class="fa fa-user"></i>个人中心</a></li>
+        <li class="dropdown-item"><a href><i class="fa fa-cog"></i>设置</a></li>
+        <li class="dropdown-item"><a href class="signout"><i class="fa fa-power-off"></i>登出</a></li>
+      </ul>-->
+    </div>
+    <!--<ba-msg-center></ba-msg-center>-->
+  </div>
+</div>

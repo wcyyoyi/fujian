@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" style="overflow: auto">
+    <img src="../../../../assets//img/images/last.png" (click)="pagination(-1)" alt=""
+        style="position: absolute;top:8%;left:5%;cursor: pointer;">
+    <img src="../../../../assets//img/images/next.png" (click)="pagination(1)" alt=""
+        style="position: absolute;top:8%;right:5%;cursor: pointer;">
+    <div id="word" [innerHTML]="src" style="margin: 10px 75px;    padding: 28px;"></div>
+    <div class="row" style="width: 100%;padding: 20px 0;">
+        <span class="col-md-2"></span>
+        <span class="col-md-8 text-center">{{num+1}}/{{prodList.length}}</span>
+        <br>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">关闭</button>
+</div>

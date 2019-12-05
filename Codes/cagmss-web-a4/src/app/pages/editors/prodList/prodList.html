@@ -1,0 +1,30 @@
+<div class="w-100 h-100">
+    <div class="input-group" style="width: 95%;">
+        <select class="custom-select" [ngModel]="year" (ngModelChange)="onYearChange($event)">
+            <option *ngFor="let year of yearList" [ngValue]="year">{{year}}</option>
+        </select>
+    </div>
+    <div style="margin-bottom: 10px;overflow: auto; height:calc(100% - 53px)">
+        <div *ngFor="let item of prodList;let i = index">
+            <div class="card p-0" style="margin-bottom: 14px;width: 95%;" id="{{item.fileName}}"
+                [ngClass]="{'fileActive':item.active}" 
+                [ngStyle]="{'background-color':item.date === '' ? 'rgba(248, 247, 247)' : 'white' }">
+                <div class="card-body" (click)="selProd(item);" style="padding:10px 15px;cursor: pointer;">
+                    <div class="media">
+                        <img *ngIf='item.active' class="align-self-start"
+                            src="../../../../assets/img/images/word-select-level{{level}}.png" alt="{{item.cnName}}"
+                            style="width: 30%;">
+                        <img *ngIf='!item.isIssue&&!item.active' class="align-self-start"
+                            src="../../../../assets/img/images/word.jpg" alt="{{item.cnName}}" style="width: 30%;">
+                        <img *ngIf='item.isIssue&&!item.active' class="align-self-start"
+                            src="../../../../assets/img/images/word-level{{level}}.png" alt="{{item.cnName}}"
+                            style="width: 30%;">
+                        <div class="media-body" style="margin:0 10px;width:70%">
+                            <h5 style="font-size: 12px">{{item.cnName}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

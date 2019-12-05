@@ -1,0 +1,144 @@
+@import '../../../theme/sass/conf/conf';
+
+.card.todo-panel {
+  background-color: $sidebar;
+  height: 99%;
+  margin-bottom: 0;
+  .card-body {
+    height: 100%;
+    padding: 0;
+  }
+}
+
+ul.todo-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0 0 -1px 0;
+    padding: 12px;
+    list-style: none;
+    position: relative;
+    border: 1px solid $input-border;
+    cursor: grab;
+    height: 42px;
+    &:hover {
+      i.remove-todo {
+        visibility: visible;
+      }
+    }
+
+    &.checked {
+      .todo-text {
+        color: $content-text;
+      }
+      &:before {
+        background: $input-border !important;
+      }
+      background-color: #bcd9d9;
+    }
+
+    &.active {  
+      background-color: #bcd9d9;
+      // label.todo-checkbox > span {
+      //   &:before {
+      //     color: white;
+      //     content: '';//'\f10c';
+      //     background-image:url(../../../../assets/img/skin/shuidao.png);
+      //     margin-right: 20px;
+      //     transition: margin-right 0.1s ease-out;
+      //     transition-delay: 0.2s;
+      //     float: none;
+      //   }
+      // }
+      // label.todo-checkbox > input:checked + span:before {
+      //   content: '';//'\f00c';
+      //   background-image:url(../../../../assets/img/skin/shuidao.png);
+      // }
+    }
+  }
+}
+
+label.todo-checkbox {
+  width: 100%;
+  //padding-right: 25px;
+  padding-left: 20px;
+  min-height: 16px;
+  cursor: pointer;
+  margin-bottom: 0;
+  > img {
+    margin-top: -5px;
+  }
+  > span {
+    white-space: nowrap;
+    height: 26px;
+    padding-left: 32px;
+    // &:before {
+    //   border: none;
+    //   color: $help-text;
+    //   transition: all 0.15s ease-out;
+    //   height: 26px;
+    //   width: 26px;
+    //   margin-left: -32px;
+    //   font-family: "Ionicons";
+    //   font-weight: 300;
+    //   font-size: 26px;
+    // }
+  }
+}
+
+ .task-todo-container {
+    .todo-panel.panel {
+      color: white;
+      background-color: $sidebar;
+      opacity: 0.9;
+    }
+
+    ul.todo-list {
+      li {
+        margin: 0;
+        //border: none;
+        border-width: 0px;
+        border-bottom: solid 1px #e4eded;
+        font-weight: $font-light;
+
+        // label.todo-checkbox > span {
+        //   &:before {
+        //     position: absolute;
+        //     color: $content-text;
+        //     content: '';//'\f10c';
+        //     background-image:url(../../../../assets/img/skin/shuidao.png);
+        //     float: none;
+        //     margin-right: 6px;
+        //     transition: none;
+        //   }
+        // }
+        // &.checked {
+        //   label.todo-checkbox > span {
+        //     &:before {
+        //       content: '';//'\f00c';
+        //       background-image:url(../../../../assets/img/skin/shuidao.png);
+        //     }
+        //   }
+        // }
+
+        label.todo-checkbox > i {
+          float: right;
+          color: #b8c8c8;
+        }
+        &.checked, &.active {
+          label.todo-checkbox > i {
+            float: right;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .box-shadow-border {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+      width: calc(100% + 44px);
+      margin-left: -22px;
+    }
+}

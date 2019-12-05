@@ -1,0 +1,88 @@
+@import "../../../scss/color";
+.c-list {
+    display: flex;
+    flex-wrap: wrap;
+    .c-token {
+        list-style: none;
+        padding: 2px 5px;
+        color: #fff;
+        border-radius: 2px;
+        margin-right: 4px;
+        margin-top: 2px;
+        float: left;
+        .c-label {
+            display: block;
+            float: left;
+            cursor: pointer;
+        }
+        .fa-remove {
+            margin-left: 1px;
+            font-size: 12px;
+            z-index: 100000000;
+            cursor: pointer;
+        }
+        &-level1 {
+            background: $yz-level1-primary3;
+        }
+        &-level2 {
+            background: $yz-level2-primary3;
+        }
+        &-level3 {
+            background: $yz-level3-primary3;
+        }
+    }
+}
+.list-group-item.active {
+    outline: none;
+}
+.list-group-item-action {
+    border-radius: 0;
+    .fa-remove {
+        float: right;
+        cursor: pointer;
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+// .list-group {
+//     &-level1 .list-group-item.active {
+//         background-color: $yz-level1-primary3;
+//         border-color: $yz-level1-primary3;
+//     }
+//     &-level2 .list-group-item.active {
+//         background-color: $yz-level2-primary3;
+//         border-color: $yz-level2-primary3;
+//     }
+//     &-level3 .list-group-item.active {
+//         background-color: $yz-level3-primary3;
+//         border-color: $yz-level3-primary3;
+//     }
+// }
+
+fieldset {
+    border: 1px solid silver;
+}
+
+legend {
+    margin: 3px 0 0;
+    padding: 0 .5em;
+    border: 0;
+    width: auto;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+:host #{"/deep/"} #ckeditor1 .cke_bottom:after {
+    content: "农事建议";
+}
+
+:host #{"/deep/"} #ckeditor2 .cke_bottom:after {
+    content: "防灾减灾建议";
+}
+.addnewMarkContent{
+    position: absolute;
+    top: 8px;
+    right: 22px;
+}

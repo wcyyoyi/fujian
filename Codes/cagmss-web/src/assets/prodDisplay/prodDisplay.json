@@ -1,0 +1,247 @@
+{
+    "wordDataType": [
+        {
+            "type": "数据要素",
+            "value": "WCRM",
+            "label": "农业气象情报",
+            "dataEle": [
+                {
+                    "value": "MONT",
+                    "label": "月"
+                },
+                {
+                    "value": "TEND",
+                    "label": "旬"
+                },
+                {
+                    "value": "WEEK",
+                    "label": "周"
+                }
+            ]
+        },
+        {
+            "type": "时间要素",
+            "value": "AWFC",
+            "label": "农业天气预报",
+            "dataEle": [
+                {
+                    "value": "SPRS-PLO-SOW",
+                    "label": "春耕春播"
+                },
+                {
+                    "value": "SUMS-HAR-SOW",
+                    "label": "夏收夏种"
+                },
+                {
+                    "value": "AUTS-HAR-SOW",
+                    "label": "秋收秋种"
+                }
+            ]
+        }
+    ],
+    "imgDataType": [
+        {
+            "type": "时间要素",
+            "value": "WCRM",
+            "label": "农业气象情报",
+            "dataEle": [
+                {
+                    "type": "气象要素",
+                    "value": "MONT",
+                    "label": "月",
+                    "dataEle": [
+                        {
+                            "value": "-TMX",
+                            "label": "最高气温"
+                        },
+                        {
+                            "value": "-TMI",
+                            "label": "最低气温"
+                        },
+                        {
+                            "value": "-TAV",
+                            "label": "平均气温"
+                        },
+                        {
+                            "value": "-TTT",
+                            "label": "小时气温"
+                        },
+                        {
+                            "value": "-TAT",
+                            "label": "积温"
+                        },
+                        {
+                            "value": "-TAD",
+                            "label": "气温距平"
+                        },
+                        {
+                            "value": "-TAL",
+                            "label": "气温同期对比"
+                        },
+                        {
+                            "value": "-RRR",
+                            "label": "累积降水"
+                        },
+                        {
+                            "value": "-RRD",
+                            "label": "降水距平"
+                        },
+                        {
+                            "value": "-RRL",
+                            "label": "降水同期对比"
+                        },
+                        {
+                            "value": "-RDP",
+                            "label": "降水距平百分率"
+                        },
+                        {
+                            "value": "-SSH",
+                            "label": "日照时数"
+                        },
+                        {
+                            "value": "-SSD",
+                            "label": "日照距平"
+                        },
+                        {
+                            "value": "-SSL",
+                            "label": "日照同期对比"
+                        },
+                        {
+                            "value": "-SDP",
+                            "label": "日照距平百分率"
+                        }
+                    ]
+                },
+                {
+                    "type": "时间要素",
+                    "value": "TEND",
+                    "label": "旬",
+                    "dataEle": [
+                        {
+                            "value": "-TAT",
+                            "label": "积温"
+                        },
+                        {
+                            "value": "-TAD",
+                            "label": "气温距平"
+                        },
+                        {
+                            "value": "-TAL",
+                            "label": "气温同期对比"
+                        },
+                        {
+                            "value": "-RRR",
+                            "label": "累积降水"
+                        },
+                        {
+                            "value": "-RRD",
+                            "label": "降水距平"
+                        },
+                        {
+                            "value": "-RRL",
+                            "label": "降水同期对比"
+                        },
+                        {
+                            "value": "-RDP",
+                            "label": "降水距平百分率"
+                        },
+                        {
+                            "value": "-SSH",
+                            "label": "日照时数"
+                        },
+                        {
+                            "value": "-SSD",
+                            "label": "日照距平"
+                        },
+                        {
+                            "value": "-SSL",
+                            "label": "日照同期对比"
+                        },
+                        {
+                            "value": "-SDP",
+                            "label": "日照距平百分率"
+                        }
+                    ]
+                },
+                {
+                    "type": "时间要素",
+                    "value": "WEEK",
+                    "label": "周",
+                    "dataEle": [
+                        {
+                            "value": "-TMX",
+                            "label": "最高气温"
+                        },
+                        {
+                            "value": "-TMI",
+                            "label": "最低气温"
+                        },
+                        {
+                            "value": "-TAV",
+                            "label": "平均气温"
+                        },
+                        {
+                            "value": "-TTT",
+                            "label": "小时气温"
+                        },
+                        {
+                            "value": "-TAT",
+                            "label": "积温"
+                        },
+                        {
+                            "value": "-TAD",
+                            "label": "气温距平"
+                        },
+                        {
+                            "value": "-TAL",
+                            "label": "气温同期对比"
+                        },
+                        {
+                            "value": "-RRR",
+                            "label": "累积降水"
+                        },
+                        {
+                            "value": "-RRD",
+                            "label": "降水距平"
+                        },
+                        {
+                            "value": "-RRL",
+                            "label": "降水同期对比"
+                        },
+                        {
+                            "value": "-RDP",
+                            "label": "降水距平百分率"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "作物",
+            "value": "AWFC",
+            "label": "农业天气预报",
+            "dataEle": [
+                {
+                    "type": "农事活动",
+                    "value": "SIRI",
+                    "label": "一季稻",
+                    "dataEle": [
+                        {
+                            "value": "-SOW-MSI",
+                            "label": "播种"
+                        },
+                        {
+                            "value": "-HAR-MSI",
+                            "label": "收获"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": "SWRM",
+            "label": "土壤水分监测",
+            "dataEle":[]
+        }
+    ]
+}

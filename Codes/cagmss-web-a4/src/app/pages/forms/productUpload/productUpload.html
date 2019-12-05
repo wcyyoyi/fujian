@@ -1,0 +1,64 @@
+<div class="form-horizontal">
+    <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+    <ba-card title="产品上传" baCardClass="with-scroll" class="setting-container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal upload row">
+            <div class="col-lg-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 control-label" for="_dataType">数据内容</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" [formControl]="_dataType" [(ngModel)]="fileUpload.dataType"
+                            (ngModelChange)="changeType($event)">
+                            <option *ngFor="let type of typeList" [ngValue]="type.tagName">{{type.tagName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 control-label" for="_makeCompany">制作单位</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" class="form-control" disabled
+                            [(ngModel)]="fileUpload.makeCompany" [formControl]="_makeCompany">
+                    </div>
+                </div>
+                <div class="form-group row" [hidden]="dataType!='WCRM'">
+                    <label class="col-sm-3 control-label" for="_dataEle">数据要素</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" [formControl]="_dataEle" [(ngModel)]="fileUpload.element"
+                            (ngModelChange)="changeElement($event)">
+                            <option *ngFor="let element of elementList" [ngValue]="element.element">{{element.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row" [hidden]="dataType!='WCRM'">
+                    <label class="col-sm-3 control-label" for="_productDate">产品时间</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="_productDate" [(ngModel)]="fileUpload.productDate"
+                            [bsConfig]="bsConfig" bsDatepicker [maxDate]="now" [formControl]="_productDate"
+                            (ngModelChange)="changeDate($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <upload #upload (submitSuccess)="submitSuccess($event)" [dataType]="dataType"
+                            [dataEle]="dataEle" [productDate]="productDate" [count]="count"
+                            (fileReady)="fileReady($event)" ></upload>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <div class="row">
+                    <div class="col-sm-4 control-label"></div>
+                    <div class="col-sm-4" style="text-align: center;">
+                        <button [disabled]="buttonStatus" type="submit" class="btn yz-btn"
+                            [ngClass]="btnClassLevel">提交</button>
+                    </div>
+                    <div class="col-sm-4 control-label"></div>
+                </div>
+            </div>
+        </form>
+    </ba-card>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

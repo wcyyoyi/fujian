@@ -1,0 +1,49 @@
+<div class="form-horizontal">
+    <ba-card title="灾情上报" baCardClass="with-scroll" class="setting-container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">上报人员</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" value="{{userName}}" readonly/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">灾情地点</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" (click)="showAreaInfo('区域选择')" readonly [ngModel]="selAreaInfo.cName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">上报时间</label>
+                    <div class="col-sm-7">
+                        <!-- <input type="text" class="form-control" readonly [ngModel]="nowTime.toLocaleString()" /> -->
+                        <input type="text" class="form-control" [(ngModel)]="date" [bsConfig]="bsConfig" bsDatepicker>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">灾情类别</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" [ngModel]="selDistItem" (ngModelChange)="onDistItemChange($event)">
+                            <option *ngFor="let dist of distList" [ngValue]="dist">{{dist.desc}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 control-label">灾情描述</label>
+                    <div class="col-sm-7">
+                        <textarea rows="3" class="form-control" maxlength="100" (keyup)="onDescriptionChange($event)" onchange="this.value=this.value.substring(0, 100)"
+                            onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)"></textarea>
+                        <span style="position: absolute;right: 0.75rem;">{{wordCount}}/100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <file-upload #fileUpload (submitStatus)="submitStatus($event)"></file-upload>
+            </div>
+        </div>
+        <div class="row mt-2" style="justify-content: center">
+            <button class="btn btn-success" (click)="submit()" #sub disabled>提交</button>
+        </div>
+    </ba-card>
+</div>

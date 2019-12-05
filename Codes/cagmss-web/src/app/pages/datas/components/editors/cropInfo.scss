@@ -1,0 +1,35 @@
+.c-list {
+    display: flex;
+    flex-wrap: wrap;
+    .c-token { 
+        list-style: none;  
+        padding: 2px 5px;
+        background: #0079FE; 
+        color: #fff;
+        border-radius: 2px;
+        margin-right: 4px;
+        margin-top: 2px;
+        float: left;
+        .c-label{
+            display: block;
+            float: left;
+            cursor: pointer;
+        }
+        .fa-remove{
+            margin-left: 1px;
+            font-size: 12px;
+            z-index: 100000000;
+            cursor: pointer;
+        }
+    }
+}
+
+.list-group-item-action {
+    .fa-remove {
+        float: right;
+        cursor: pointer;
+        &:hover{
+            color: #000;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@import '../../theme/sass/auth';
+
+.auth-split {
+    //background-color: #fff;
+    background-image: -webkit-gradient(linear, to left, transparent, rgba(255, 255, 255, 0.8), transparent);
+    background-image: -moz-linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8), transparent);
+    background-image: -ms-linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8), transparent);
+    background-image: -o-linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8), transparent);
+    background-image: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8), transparent);
+    border: 0 none;
+    height: 1px;
+    margin-bottom: 30px;
+}
+
+// .form-horizontal .form-control{
+//     background: rgba(0, 0, 0, 0);
+//     border: none;
+//     border-bottom: 1px solid #c8c8c8;
+//     border-radius: 0;
+//     box-shadow: none;
+//     padding: 10px 0 0 30px;
+//     height: 40px;
+//     font-size: 16px;
+//     transition: all 0.3s ease 0s;
+//     color: #000;
+// }
+
+// .form-horizontal .form-control:focus{
+//     background: rgba(0, 0, 0, 0);
+//     border: none;
+//     border-bottom: 1px solid #c8c8c8;
+//     border-radius: 0;
+//     box-shadow: none;
+//     outline: 0 none;
+//     color: #000;
+// }
+
+// .form-horizontal .form-control input:-webkit-autofill,
+//     input:-webkit-autofill:hover,
+//     input:-webkit-autofill:focus,
+//     input:-webkit-autofill:active {
+//     transition-delay: 99999s;
+//     transition: color 99999s ease-out, background-color 99999s ease-out;
+// }
+
+.form-horizontal .form-group i{
+    position: absolute;
+    top: 12px;
+    // left: 60px;
+    font-size: 26px;
+    color: #c8c8c8;
+    transition : all 0.5s ease 0s;
+}
+
+.logo {
+  display: flex;
+  // 水平居中
+  justify-content: center;
+  align-items: center;
+
+  img {
+      width: 350px;
+  }
+}
+
+.form-horizontal .btn {
+  display: flex;
+  // 水平居中
+  justify-content: center;
+}
+
+.icon {
+    top: 6px;
+}

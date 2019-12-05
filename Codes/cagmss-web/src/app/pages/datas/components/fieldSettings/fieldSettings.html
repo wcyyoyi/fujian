@@ -1,0 +1,16 @@
+<!-- <div class="form-group">
+    <label for="checkOptions">字段列表</label> -->
+    <!-- <div class="check-body">
+        <div *ngFor="let option of fieldsOpt" >
+            <label>
+                <input type="checkbox"
+                    name="checkOptions"
+                    value="{{option}}"
+                    [checked]="option.checked"
+                    (change)="updateCheckedOptions(option, $event)"/>
+                {{option.value.title}}
+            </label>
+        </div>
+    <div> -->
+<!-- </div> -->
+<ng2-smart-table [settings]="settings" [source]="source" #table></ng2-smart-table>

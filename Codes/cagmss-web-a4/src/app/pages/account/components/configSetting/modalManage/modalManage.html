@@ -1,0 +1,43 @@
+<ba-card title="模版管理" baCardClass="with-scroll">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+        <div class="form-group row search-setting"
+            [ngClass]="{'has-error': (!detail.valid && detail.touched), 'has-success': (detail.valid && detail.touched)}">
+            <label for="detail" class="col-sm-3 control-label">数据内容</label>
+            <div class="col-sm-9">
+                <select class="form-control col-sm-9" [formControl]="detail" [ngModel]="selDetail">
+                    <option *ngFor="let type of typeList" [ngValue]="type.desc">{{type.desc}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row search-setting"
+            [ngClass]="{'has-error': (!unit.valid && unit.touched), 'has-success': (unit.valid && unit.touched)}">
+            <label for="unit" class="col-sm-3 control-label">制作单位</label>
+            <div class="col-sm-9">
+                <select class="form-control col-sm-9" [formControl]="unit" [ngModel]="selUnit">
+                    <option *ngFor="let unit of unitList" [ngValue]="unit.cName">{{unit.cName}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row search-setting">
+            <label for="element" class="col-sm-3 control-label">要素</label>
+            <div class="col-sm-9">
+                <select class="form-control col-sm-9" [formControl]="element" [ngModel]="selElement">
+                    <option *ngFor="let element of elementList" [ngValue]="element.name">{{element.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row" style="width: 100%;float:left">
+            <div class="col-sm-4 control-label"></div>
+            <div class="offset-sm-1 col-sm-3">
+                <button [disabled]="!form.valid" type="submit" class="btn yz-btn" [ngClass]="btnClassLevel">提交</button>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+    </form>
+</ba-card>
+<ba-card title="模版列表" baCardClass="with-scroll">
+    <div style="height:433px;">
+        <ba-grid #grid [settings]="settings" [source]="source"></ba-grid>
+    </div>
+</ba-card>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

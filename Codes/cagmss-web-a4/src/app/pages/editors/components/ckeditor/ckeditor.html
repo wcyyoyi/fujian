@@ -1,0 +1,42 @@
+<div class="row w-100 h-100 p-2" style="overflow: hidden;">
+  <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+  <div class="col-md-10 h-100">
+    <ba-card title="{{isIssued?'产品展示':'内容编辑'}}{{msg}}" baCardClass="with-scroll h-100">
+      <div *ngIf="isIssued" class="h-100" style="background:#3E5F9A;overflow: auto">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"
+          style="position: absolute;right: 22px;top: 6px;">
+          <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px" (click)="download()"
+              #doBtn>下载</button>
+          </div>
+        </div>
+        <div class="m-auto pt-3" style="width: 21cm;">
+          <pdf-viewer [src]="pdfSrc" style="display: block;"></pdf-viewer>
+        </div>
+      </div>
+      <div *ngIf="!isIssued" class="h-100">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"
+          style="position: absolute;right: 22px;top: 6px;">
+          <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 100px" (click)="deleteSaved()"
+              #deBtn>删除存档</button>
+            <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px" (click)="save()"
+              #sBtn>保存</button>
+            <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px" (click)="preview()"
+              #lkBtn>预览</button>
+            <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px" (click)="download()"
+              #doBtn>下载</button>
+            <button type="button" class="btn btn-secondary m-1 p-1 rounded" style="width: 60px" (click)="issue()"
+              #iBtn>发布</button>
+          </div>
+        </div>
+        <div id="ckeditor" style="height: 100%;">
+          <ckeditor #ckeditor [(ngModel)]="ckeditorContent" [config]="config"></ckeditor>
+        </div>
+      </div>
+    </ba-card>
+  </div>
+  <div class="col-md-2 h-100">
+    <prodList (onProdChange)="onProdChange($event)" #prodList></prodList>
+  </div>
+</div>

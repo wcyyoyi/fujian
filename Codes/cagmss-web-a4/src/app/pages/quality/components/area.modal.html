@@ -1,0 +1,15 @@
+<div class="_container"></div>
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <area-choose (onSelected)="selectArea($event)" [filterType]="'jujube'"></area-choose>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn yz-btn" [ngClass]="btnClassLevel"
+        (click)="confirm();bsModalRef.hide();">确认</button>
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">关闭</button>
+</div>

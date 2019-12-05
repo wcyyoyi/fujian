@@ -1,0 +1,41 @@
+<ba-full-calendar [baFullCalendarConfiguration]="calendarConfiguration" baFullCalendarClass="blurCalendar" (onCalendarReady)="onCalendarReady($event)"></ba-full-calendar>
+
+<ng-template #expModel>
+    <div class="modal-header border-bottom p-3">
+        <h4 class="modal-title pull-left  font-weight-bold">预警详情    </h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body pt-0">
+        <div>
+                <!-- style="border-collapse:separate; border-spacing:0px 15px;" -->
+            <table class="exp-table">
+                <tr>
+                    <td class="text-center font-weight-bold">区域</td>
+                    <td style="border-right: 2px solid #dee2e6;">{{expInfo.v01000Str}}</td>
+                    <td class="text-center font-weight-bold">作物</td>
+                    <td>{{expInfo.cCropcodeStr}}</td>
+                </tr>
+                <tr>
+                    <td class="text-center font-weight-bold">发育期</td>
+                    <td style="border-right: 2px solid #dee2e6;">{{expInfo.c56002}}</td>
+                    <td class="text-center font-weight-bold">持续时间</td>
+                    <td>{{expInfo.dStartdateStr}}~{{expInfo.dEnddateStr}}</td>
+                </tr>
+                <tr>
+                    <td class="text-center align-top font-weight-bold">农事建议</td>
+                    <td class="pr-3" colspan="3">
+                        <ckeditor [(ngModel)]="expInfo.cAdvise" [config]="config"></ckeditor>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center align-top font-weight-bold">防灾减灾建议</td>
+                    <td class="pr-3" colspan="3">
+                        <ckeditor [(ngModel)]="expInfo.cDadvise" [config]="config"></ckeditor>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</ng-template>

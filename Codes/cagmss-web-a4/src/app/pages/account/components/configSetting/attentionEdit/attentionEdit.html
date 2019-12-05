@@ -1,0 +1,9 @@
+<ba-card title="关注内容编辑" baCardClass="with-scroll">
+    <button type="button" class="btn btn-default btn-secondary mb-2" tooltip="<br>为换行标签" placement="bottom">
+        i
+    </button>
+    <textarea [disabled]="disable" class="form-control" rows="30" [(ngModel)]="content"></textarea>
+    <button type="button" class="btn yz-btn" style="margin: 20px auto 0;display: block" [ngClass]="btnClassLevel"
+        (click)="save()" #sBtn [disabled]="disable">保存</button>
+</ba-card>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

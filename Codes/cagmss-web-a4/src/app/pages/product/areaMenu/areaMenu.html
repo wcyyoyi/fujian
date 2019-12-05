@@ -1,0 +1,22 @@
+<div class="al-sidebar" [ngClass]="classLevel">
+    <tabset #staticTabs [justified]="true">
+        <tab heading="省级" >
+            <div class="nav flex-column nav-pills" aria-orientation="vertical">
+                <a class="nav-link" id="v-pills-home-tab" *ngFor="let item of proListShow;" (click)="selectDistrict(item)"
+                    [ngClass]="{'active':selArea.cCode ===item.cCode }">{{item.cName}}</a>
+            </div>
+        </tab>
+        <tab heading="市级" >
+            <div class="nav flex-column nav-pills" aria-orientation="vertical">
+                <a class="nav-link" id="v-pills-home-tab" *ngFor="let item of cityListShow;" (click)="selectDistrict(item)"
+                    [ngClass]="{'active':selArea.cCode ===item.cCode }">{{item.cName}}</a>
+            </div>
+        </tab>
+        <tab heading="县级" >
+            <div class="nav flex-column nav-pills" aria-orientation="vertical">
+                <a class="nav-link" id="v-pills-home-tab" *ngFor="let item of counListShow;" (click)="selectDistrict(item)"
+                    [ngClass]="{'active':selArea.cCode ===item.cCode }">{{item.cName}}</a>
+            </div>
+        </tab>
+    </tabset>
+</div>

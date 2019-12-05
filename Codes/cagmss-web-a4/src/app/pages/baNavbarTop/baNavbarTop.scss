@@ -1,0 +1,202 @@
+@import '../../theme/sass/conf/conf';
+@import '../../theme/components/baMsgCenter/baMsgCenter';
+@import '../scss/_color.scss';
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar-top {
+    background-color: $sidebar;
+    position: fixed;
+    z-index: 1010; //904;
+    height: 42px;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5); //   height: 66px;
+    width: 100%;
+    padding: 0 32px 0 40px;
+    top: 100px; //36px;
+    // zf
+    &-level1 {
+        background-image: $yz-level1-navbar-top;
+    }
+    &-level2 {
+        background-image: $yz-level2-navbar-top;
+    }
+    &-level3 {
+        background-image: $yz-level3-navbar-top;
+    }
+    .dropdown-toggle::after {
+        display: none;
+    }
+}
+
+.blur {
+    .navbar-top.scrolled {
+        background-color: rgba(black, 0.85)
+    }
+}
+
+@media screen and (max-width: $resS) {
+    .search {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $resXS) {
+    .page-top {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: $resXXS) {
+    .user-profile {
+        min-width: 136px;
+    }
+    a.refresh-data {
+        margin-right: 10px;
+    }
+    a.collapse-menu-link {
+        margin-left: 10px;
+    }
+    .al-skin-dropdown {
+        display: none;
+    }
+}
+
+.navbar-top a.al-sidebar-list-link {
+    padding: 0 18px 0 18px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #fff;
+    &-level1 {
+        &:hover {
+            color: $yz-level1-primary4; //$primary;
+        }
+    }
+    &-level2 {
+        &:hover {
+            color: $yz-level2-primary4; //$primary;
+        }
+    }
+    &-level3 {
+        &:hover {
+            color: $yz-level3-primary4; //$primary;
+        }
+    }
+    >i {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+}
+
+.navbar-top {
+    // 垂直居中
+    .al-sidebar-list-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-item+.nav-item {
+        margin-left: 0;
+        >li {
+            &:before {
+                content: '';
+                border-left: 1px solid white;
+                padding: 18px 1px 0px 0px;
+                border-image: url(/assets/img/skin/top_split.png) 2 0 stretch;
+                -moz-border-image: url(/assets/img/skin/top_split.png) 2 0 stretch;
+                -webkit-border-image: url(/assets/img/skin/top_split.png) 2 0 stretch;
+            }
+        }
+    }
+    .nav-item {
+        &.selected+.nav-item {
+            >li {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.navbar-top .al-sidebar-list-item.selected {
+    display: flex; // 水平居中
+    justify-content: center;
+    // flex-direction: column;
+    .outarrow {
+        border-color: #085f9c transparent transparent;
+        border-style: solid;
+        border-width: 6px;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 42px;
+    }
+    a.al-sidebar-list-link {
+        color: #fff; //$sidebar-text;
+        b {
+            color: #fff; //$sidebar-text;
+        }
+    }
+}
+.navbar{
+    height: 100%;
+    margin: auto;
+    padding:0;
+}
+.navbar-collapse{
+}
+.navbar-toggler{
+    font-size: 15px;
+    border: 1px solid gainsboro !important;
+    &:hover{
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        box-shadow: none;
+    }
+}
+button{
+    outline: none !important;
+}
+@media(min-width : calc(1500px)) {    
+    .nav.navbar-top {
+        a.al-sidebar-list-link {
+            margin: 0 25px;
+        }
+    }
+}
+@media(min-width : calc(992px)) {    
+    .nav.navbar-top {
+        a.al-sidebar-list-link {
+            padding: 0 2px;
+        }
+        padding: 0 5px;
+    }
+}
+@media(min-width : calc(1300px)) {    
+    .nav.navbar-top {
+        a.al-sidebar-list-link {
+            padding: 0 20px;
+        }
+        padding: 0 10px;
+    }
+}
+@media(min-width : calc(1150px)) {    
+    .nav.navbar-top {
+        a.al-sidebar-list-link {
+            padding: 0 10px;
+        }
+        padding: 0 10px;
+    }
+}
+@media(max-width : calc(992px)) {    
+    .navbar {
+        margin: 0;
+    }
+}

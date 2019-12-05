@@ -1,0 +1,17 @@
+<div class="form-horizontal h-100">
+  <div class="table-top">
+    <ba-card title="作物管理" baCardClass="with-scroll cropTableCard">
+      <button type="button" class="btn yz-btn addnew" [ngClass]="btnClassLevel"
+        (click)="detail('','add','cropManage')">添加</button>
+      <ba-grid #grid [settings]="settings" [source]="cropSource" (rowSelect)="cropChange($event)"></ba-grid>
+    </ba-card>
+  </div>
+  <div class="table-bottom">
+    <ba-card title="作物发育期" baCardClass="with-scroll cropTableCard">
+      <button type="button" class="btn yz-btn addnew" [ngClass]="btnClassLevel"
+        (click)="detail('','add','cropDevelopment')">添加</button>
+      <ba-grid [settings]="_settings" [source]="developmentSource"></ba-grid>
+    </ba-card>
+  </div>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

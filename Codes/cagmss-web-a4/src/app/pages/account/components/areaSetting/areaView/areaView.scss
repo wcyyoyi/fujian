@@ -1,0 +1,9 @@
+.changesize{
+    width: 230px;
+    height: 100px;
+  }
+:host #{"/deep/"}  .card.with-scroll .card-body{
+    overflow: hidden;
+}
+
+

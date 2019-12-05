@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <button (click)="setDay(-1)">前一天</button>
+      <button (click)="setDay(1)">后一天</button> -->
+      <ba-card title="内容编辑{{msg}}" baCardClass="with-scroll">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="position: absolute;right: 22px;top: 6px;">
+          <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary" (click)="save()" #sBtn>保存</button>
+            <button type="button" class="btn btn-secondary" (click)="download()" #dBtn>下载</button>
+            <button type="button" class="btn btn-secondary" (click)="issue()" #iBtn>发布</button>
+          </div>
+        </div>
+        <div>
+          <ckeditor #ckeditor [(ngModel)]="ckeditorContent" [config]="config"></ckeditor>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+</div>

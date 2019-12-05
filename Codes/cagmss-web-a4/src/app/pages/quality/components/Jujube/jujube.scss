@@ -1,0 +1,32 @@
+.settingMode {
+    border: 1px groove !important;
+    width: 30px !important;
+}
+
+input[type=number] {
+    text-align: center;
+    width: 20px;
+    border: 0;
+    background: transparent;
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.text-center{
+    margin: 20px 0;
+    font-size: 12px;
+    color: #333333;
+    .row{
+        margin: 0;
+    }
+    .col-lg-11{
+        padding: 0;
+    }
+    .title-p{
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,45 @@
+/* Normal white Button as seen on Google.com*/
+
+@import '../../../pages/scss/_color.scss';
+.exportCSV {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+}
+
+.toolBar {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 1000;
+    .toolBar-tag {
+        float: left;
+        width: 20px;
+        height: 70px;
+        font-size: 11px;
+        color: #ffffff;
+        background-color: #666666;
+        text-align: center;
+    }
+    .toolBar-panel {
+        float: right;
+        width: 0px;
+        transition: width 1s;
+    }
+}
+
+.toolBar:hover {
+    .toolBar-panel {
+        width: 150px;
+        transition: width 1s;
+        transition-timing-function: ease;
+    }
+}
+
+button.exportBtn {
+    width: 95px;
+    padding: 2px;
+    &:hover {
+        transform: none;
+    }
+}

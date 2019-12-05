@@ -1,0 +1,31 @@
+<div class="al-main">
+  <div class="al-sidebar-left">
+    <ba-card class="contain" baCardClass="with-scroll todo-panel">
+      <todo [map]="mapbox"></todo>
+    </ba-card>
+  </div>
+
+  <div class="middle-map">
+    <mapbox-maps #mapbox></mapbox-maps>
+  </div>
+
+  <div class="al-sidebar-right">
+    <ba-card class="contain" baCardClass="right-alert" iconClass="fa fa-bell" title="预警信息">
+      <!--<div class="info">福建省气象台6月15日5时20分变更发布暴雨蓝色预警信号</div>-->
+      <div class="row info-meteo-icon">
+        <div class="col-xs-12 alert-contain">
+          <img src="/assets/img/skin/right_bg_meteo2.png" alt="meteo-icon">
+          <!--<h3>霜冻</h3>-->
+        </div>
+      </div>
+      <div class="row info-meteo-text">
+        <li><span>福建省气象台6月15日5时20分变更发布霜冻蓝色预警信号</span></li>
+      </div>
+    </ba-card>
+    <ba-card class="contain" baCardClass="with-scroll right-about" iconClass="fa fa-heart" title="关注">
+      <li><span>6月上旬全省气温正常到偏高，降水大部正常到偏多，日照正常到偏少。本旬中后期全省光温条件总体较好，有利于作物和果树生长发育，有利于成熟期烤烟和果实采收。</span></li>
+      <li><span>1～3日我省自北向南出现持续暴雨天气，不利于水稻、蔬菜等作物的光合生长，亦不利于成熟烤烟的采收。同时，适温高湿的气象条件适宜作物和果树病虫害发生。</span></li>
+    </ba-card>
+  </div>
+
+</div>

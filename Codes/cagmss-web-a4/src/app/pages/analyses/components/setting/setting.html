@@ -1,0 +1,109 @@
+<ba-card title="{{title}}设置" baCardClass="with-scroll">
+    <tabset class="col-12" id="tabcontainer" style="display:block">
+        <tab heading="连续查询" (select)="tableChange(0)">
+            <div class="form-horizontal form-group row">
+                <label for="txtStartTime" class="col-sm-2 control-label">开始时间</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtStartTime" [(ngModel)]="vStart" [bsConfig]="bsConfig"
+                        placeholder="请选择开始时间" bsDatepicker [maxDate]="now" readonly *ngIf="level==1">
+                    <input type="text" class="form-control" id="txtStartTime" [(ngModel)]="vStart" [bsConfig]="bsConfig"
+                        placeholder="请选择开始时间" bsDatepicker [maxDate]="now" [minDate]="minDate" readonly
+                        *ngIf="level!=1">
+                </div>
+                <label for="txtEndTime" class="col-sm-2 control-label">结束时间</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="txtEndTime" [(ngModel)]="vEnd" [bsConfig]="bsConfig"
+                        placeholder="请选择结束时间" bsDatepicker [maxDate]="now" readonly *ngIf="level==1">
+                    <input type="text" class="form-control" id="txtEndTime" [(ngModel)]="vEnd" [bsConfig]="bsConfig"
+                        placeholder="请选择结束时间" bsDatepicker [maxDate]="now" [minDate]="minDate" readonly
+                        *ngIf="level!=1">
+                </div>
+            </div>
+            <div class="form-horizontal form-group row">
+                <label type="text" for="textSetMIN" class="col-sm-2 control-label">最小值</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" id="textSetMIN" [(ngModel)]="vSetMIN">
+                </div>
+                <label type="text" for="textSetMAX" class="col-sm-2 control-label">最大值</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" id="textSetMAX" [(ngModel)]="vSetMAX">
+                </div>
+            </div>
+            <div class="form-horizontal form-group row" *ngIf="type==7">
+                <label id="txtStation" for="txtStation" class="col-sm-2 control-label">站点列表</label>
+                <div id="selectStation" class="col-sm-4">
+                    <input type="text" class="form-control" (click)="showStaModal()" readonly
+                        value="{{selStationInfo}}" />
+                </div>
+            </div>
+            <div class="row" style="justify-content: center">
+                <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="search()">查询</button>
+            </div>
+        </tab>
+        <tab heading="非连续查询" style="height: 100%;" (select)="tableChange(1)">
+            <div class="form-horizontal form-group row">
+                <label for="txtStartTime" class="col-sm-2 control-label">开始年份</label>
+                <div class="col-sm-4">
+                    <select class="col-sm-3 form-control" style="width:200px;" [(ngModel)]="startYear"
+                        (ngModelChange)="startYearChange($event)">
+                        <option class="col-md-1" *ngFor="let year of yearlist" [value]="year">{{year}}</option>
+                    </select>
+                </div>
+                <label for="txtStartTime" class="col-sm-2 control-label">结束年份</label>
+                <div class="col-sm-4">
+                    <select class="col-sm-3 form-control" style="width:200px;" [(ngModel)]="endYear"
+                        (ngModelChange)="endYearChange($event)">
+                        <option class="col-md-1" *ngFor="let year of yearlist" [value]="year">{{year}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-horizontal form-group row">
+                <label for="txtStartTime" class="col-sm-2 control-label">开始时间</label>
+                <div class="col-sm-4">
+                    <div style="width:130px;">
+                        <date-choose (onChange)="setStartDate($event)" [initDate]="startDate"></date-choose>
+                    </div>
+                </div>
+                <label for="txtEndTime" class="col-sm-2 control-label">结束时间</label>
+                <div class="col-sm-4">
+                    <div style="width:130px;">
+                        <date-choose (onChange)="setEndDate($event)" [initDate]="endDate"></date-choose>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal form-group row">
+                <label type="text" id="mintext1" for="textSetMIN" class="col-sm-2 control-label">最小值{{unit}}</label>
+                <div id="mintext2" class="col-sm-4">
+                    <input type="number" class="form-control" id="textSetMIN" [(ngModel)]="vSetMIN">
+                </div>
+                <label type="text" id="maxtext1" for="textSetMAX" class="col-sm-2 control-label">最大值{{unit}}</label>
+
+                <div id="maxtext2" class="col-sm-4">
+                    <input type="number" class="form-control" id="textSetMAX" [(ngModel)]="vSetMAX">
+                </div>
+            </div>
+            <div class="form-horizontal form-group row" *ngIf="type==7">
+                <label id="txtStation1" for="txtStation" class="col-sm-2 control-label">站点列表</label>
+                <div id="selectStation1" class="col-sm-4">
+                    <input type="text" class="form-control" (click)="showStaModal()" readonly
+                        value="{{selStationInfo}}" />
+                </div>
+            </div>
+
+            <div class="row" style="justify-content: center">
+                <button class="btn yz-btn" [ngClass]="btnClassLevel" (click)="search()">查询</button>
+            </div>
+        </tab>
+    </tabset>
+</ba-card>
+<ba-card title="统计结果" baCardClass="with-scroll data-result">
+    <result [source]="dataResult" [type]="type" [fieldName]="fieldName" [startDateString]="startDateString"
+        [endDateString]="endDateString" [excelFileName]="excelFileName" (dataResult)="dataChange($event)"></result>
+</ba-card>
+<ba-card title="统计图表" baCardClass="with-scroll">
+    <chart [result]="result" [vStart]="vStart" [vEnd]="vEnd" [type]="type" [fieldName]="fieldName"
+        [tabSelectValue]="tabSelectValue" [startYear]="startYear" [endYear]="endYear" [startMonthDay]="startMonthDay"
+        [endMonthDay]="endMonthDay"></chart>
+</ba-card>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

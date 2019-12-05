@@ -1,0 +1,139 @@
+<div class="h-100 m-auto" style="padding: 10px 10px;">
+    <div class="row w-100" style="margin-bottom: 10px;">
+        <div class="col-12">
+            <nav aria-label="breadcrumb" class="row justify-content-between">
+                <ol class="col-4 breadcrumb m-0 pt-0 pb-0" style="background-color: transparent;">
+                    <span class="text-dark">[&nbsp;&nbsp;</span>
+                    <li *ngFor="let item of makeComList;" class="breadcrumb-item active">
+                        <a class="text-secondary" *ngIf="item !== undefined"
+                            [routerLink]="['../../../../homePage',item.cPCode]">{{item.cName}}</a>
+                    </li>
+                    <span class="text-dark">&nbsp;&nbsp;]</span>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="row crop-list form-horizontal" [ngClass]="croplistClassLevel">
+        <tabset class="col-12" #tabset>
+            <tab heading="文字产品">
+                <div class="card bg-white">
+                    <div class="card-header">查询条件</div>
+                    <div class="card-body">
+                        <div class="searchForm">
+                            <div class="row align-items-center" *ngIf="wordProdMenus!=undefined">
+                                <label class="col-md-2 control-label">{{wordProdMenus.title}}:</label>
+                                <div class="col-md-10">
+                                    <div class="float-left w-25" *ngFor="let item of wordProdMenus.elements">
+                                        <label class="radio-label" [ngClass]="radiolabelClassLevel">
+                                            <input type="{{wordProdMenus.type}}" value={{item.value}}
+                                                name="{{wordProdMenus.id}}HTMLName"
+                                                (click)="createElements(item,wordProdMenus.id,'PDF','dataType')">
+                                            <span>{{item.label}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="{{wordProdMenus.id}}HTML" class="w-100"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center w-100">
+                            <button class="btn yz-btn" [ngClass]="btnClassLevel"
+                                (click)="wordSearch(prodDataType, prodDataEleArr.join(','), 'PDF')">查询</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-white">
+                    <div class="card-header">查询结果</div>
+                    <div class="card-body">
+                        <div style="height:500px;">
+                            <ba-grid #grid [settings]="settings" [source]="source"></ba-grid>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab heading="图片产品">
+                <div class="card bg-white">
+                    <div class="card-header">查询条件</div>
+                    <div class="card-body">
+                        <div class="searchForm">
+                            <div class="row align-items-center" *ngIf="imgProdMenus!=undefined">
+                                <label class="col-md-2 control-label">{{imgProdMenus.title}}:</label>
+                                <div class="col-md-10">
+                                    <div class="float-left w-25" *ngFor="let item of imgProdMenus.elements">
+                                        <label class="radio-label" [ngClass]="radiolabelClassLevel">
+                                            <input type="{{imgProdMenus.type}}" value={{item.value}}
+                                                name="{{imgProdMenus.id}}JPGName"
+                                                (click)="createElements(item,imgProdMenus.id,'JPG','dataType')">
+                                            <span> {{item.label}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="{{imgProdMenus.id}}JPG" class="w-100"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center w-100">
+                            <button class="btn yz-btn" [ngClass]="btnClassLevel"
+                                (click)="imgSearch(imgDataType, imgDataEleArr.join(','), 'JPG')">查询</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card bg-white">
+                        <div class="card-header">查询结果</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="pl-3 pr-3">
+                                    <ng-container *ngFor="let item of imgList">
+                                        <img src={{item.url}} class="float-left col-xl-2 col-lg-3 col-md-4"
+                                            (click)="imgDetail(item.num);" alt={{item.cnName}}>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab heading="表格产品">
+                <div class="card bg-white">
+                    <div class="card-header">查询条件</div>
+                    <div class="card-body">
+                        <div class="searchForm">
+                            <div class="row align-items-center" *ngIf="tableProdMenus!=undefined">
+                                <label class="col-md-2 control-label">{{imgProdMenus.title}}:</label>
+                                <div class="col-md-10">
+                                    <div class="float-left w-25" *ngFor="let item of tableProdMenus.elements">
+                                        <label class="radio-label" [ngClass]="radiolabelClassLevel">
+                                            <input type="{{tableProdMenus.type}}" value={{item.value}}
+                                                name="{{tableProdMenus.id}}CSVName"
+                                                (click)="createElements(item,tableProdMenus.id,'CSV','dataType')">
+                                            <span> {{item.label}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div id="{{tableProdMenus.id}}CSV" class="w-100"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center w-100">
+                            <button class="btn yz-btn" [ngClass]="btnClassLevel"
+                                (click)="csvSearch(csvDataType, csvDataEleArr.join(','), 'CSV')">查询</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-white">
+                    <div class="card-header">查询结果</div>
+                    <div class="card-body">
+                        <div style="height:500px;" *ngIf="value=='表格产品'">
+                            <ba-grid #grid [settings]="settings" [source]="source"></ba-grid>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+        </tabset>
+    </div>
+</div>
+<div id="shade"
+    style="width: 100%;position: absolute; opacity: 0.5; display: none;height: 100%;background-color: black;top:0">
+</div>

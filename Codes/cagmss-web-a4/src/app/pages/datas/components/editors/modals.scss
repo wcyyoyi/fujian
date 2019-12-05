@@ -1,0 +1,37 @@
+@import "../../../../theme/sass/conf/conf";
+@import "../../../scss/color";
+._container{
+  width :800px;
+}
+.modal-footer .btn {
+  margin-right: 20px;
+}
+.modal-body {
+  color: $dropdown-text;
+  select{
+    height: 30px;
+    padding: 0;
+    background-color: white;
+    color: #666666;
+    border: 1px solid #cbcbcb;
+  }
+  label{
+    color: #666666;
+  }
+  input{
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    height: 30px;
+    width: 100%;
+    padding: 2px;
+    &:focus{
+      color: #666666;
+      box-shadow: none;
+      border-color: #f1f1f1;
+      background: #ffffff;
+    }
+  }
+  .input-group-addon{
+    height: 30px;
+  }
+}

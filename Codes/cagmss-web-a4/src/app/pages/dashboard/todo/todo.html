@@ -1,0 +1,21 @@
+<div class="task-todo-container">
+  <div class="todo-list">
+    <div class="todo-title">
+      <span (click)="selectAll(true)" *ngIf="selectAllCrop" style="cursor: pointer;font-size: 14px">全选</span>
+      <span (click)="selectAll(false)" *ngIf="!selectAllCrop" style="cursor: pointer;font-size: 14px">全不选</span>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 crop" [ngClass]="{'cropSelected':selectedItem == item}" *ngFor="let item of newTodoList">
+        <figure class="figure" (click)="onSelectedItemChange(item)">
+          <img src="/assets/img/crop/{{item.name}}.png" onerror="javascript:this.src='/assets/img/crop/tongyong.png'"/>
+          <figcaption>{{item.text}}</figcaption>
+        </figure>
+        <span class="arrow">
+          <img src="/assets/img/images/arrow-level{{userLevel}}.jpg" *ngIf='!item.isSelected' (click)="selCrop(item)" />
+          <img src="/assets/img/images/arrow-level{{userLevel}}-selected.jpg" *ngIf='item.isSelected'
+            (click)="selCrop(item)" />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

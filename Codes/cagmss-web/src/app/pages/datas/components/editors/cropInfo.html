@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 list-group">
+            <button *ngFor="let info of cropInfoList" class="list-group-item list-group-item-action" 
+                style="cursor:pointer" [class.active]="info==selCropInfo" 
+                (click)="onSelect(info)">{{info.start}} 至 {{info.end}}<span class="fa fa-remove" 
+                (click)="onDateRemove(info)"></span>
+            </button>
+        </div>
+        <div *ngIf="selCropInfo" class="col-sm-9">
+            <div class="alert alert-secondary c-list" role="alert">
+                <div class="c-token" *ngFor="let varidev of selCropInfo.varidevs">
+                    <span class="c-label">{{varidev.desc}}</span>
+                    <span class="fa fa-remove" (click)="onVaridevRemove(varidev)"></span>
+                </div>
+            </div>
+            <ckeditor [(ngModel)]="selCropInfo.nadvise" [config]="config"></ckeditor>
+            <p></p>
+            <div class="alert alert-secondary c-list" role="alert">
+                <div class="c-token" *ngFor="let dist of selCropInfo.dists">
+                    <span class="c-label" (click)="onDistClick(dist)">{{dist.desc}}</span>
+                    <span class="fa fa-remove" (click)="onDistRemove(dist)"></span>
+                </div>
+            </div>
+            <ckeditor [(ngModel)]="selCropInfo.dadvise" [config]="config"></ckeditor>
+        </div>
+    </div>
+</div>

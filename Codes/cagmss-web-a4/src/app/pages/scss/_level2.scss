@@ -1,0 +1,173 @@
+.body-level2{
+    main,.al-sidebar-right,.al-sidebar-left{
+        background-color: $main-bg-level2 !important;
+    }
+    dashboard{
+        .card > .card-header{
+            border-bottom: 1px solid gainsboro;;
+        }
+    }
+    .fadeImg{
+        position: absolute;
+        margin: 0 auto;
+        top: 0;
+        opacity: 1;
+        background-size: cover;
+        -webkit-backface-visibility: hidden;
+    }
+    .banner-bg{
+        background: url('/assets/img/images/banner-level2.png');
+    }
+    a.al-logo,.al-user-profile a{
+        color:$page-color-level2;
+    }
+    .navbar-top,.navbar-collapse{
+        background-color: $title-bg-level2;
+    }
+    .navbar-top a.al-sidebar-list-link-level2:hover{
+        color:$title-active-bg-level2;
+    }
+    .todo-title{
+        background-color: $card-title-bg-level2;
+        color:black;
+        border-bottom: 1px solid $crop-border-level2;
+    }
+    .crop{
+        border: 1px solid $crop-border-level2;
+    }
+    .cropSelected{
+        background-color:$crop-select-level2;
+    }
+    .card,.al-sidebar{
+        background-color: $card-bg-level2;
+    }
+    .fc-list-empty{
+        background-color:$empty-bg-level2;
+    }
+    .card-header{
+        background-image: none !important;
+        background-color: $card-title-bg-level2 !important;
+    }
+    .card-title{
+        color:$card-title-color-level2;
+    }
+    .product-item{
+        background-color: $common-bg-level1;
+    }
+    .navbar-top .al-sidebar-list-item.selected{
+        background-color: $title-active-bg-level2;
+    }
+    .right-about .card-body {
+        color: $black-two-color;
+        // span{
+        //     font-size: $font-size-12;
+        // }
+    }
+    a.collapse-menu-link {
+        background-image: url('/assets/img/images/logo-level2.png');
+    }
+    .al-sidebar-sublist > ba-menu-item > li.selected:not(.with-sub-menu) > a ,.nav-pills .nav-link.active{
+        border-left: 4px solid $aside-border-level2;
+        color: $aside-border-level2;
+        background-color: $aside-bg-level2;
+        border-radius: 0;
+    }
+    .crop-list .nav-tabs > li.active > a,.list-group-item.active,.c-token,.modal-header,.fileActive{
+        background-color: $common-bg-level2 !important;
+        color:$white-color !important;
+        border: none !important;
+    }
+    .ba-sidebar-item-expanded>a,button.yz-btn-level2,.nav.nav-tabs > li.active > a,span.tag,.btn-primary,
+    .radio-label input[type="radio"]:checked + span{
+        background-color: $aside-border-level2;
+        color: $white-color !important;
+    }
+    .al-sidebar-sublist > ba-menu-item > li a,.nav-justified .nav-item a,.nav{
+        color: $text-color-level2;
+        font-size: $font-size-14;
+    }
+    a.al-sidebar-list-link,a.al-sidebar-list-link b{
+        color: $aside-border-level2;
+    }
+    .form-group label,.form-control,form-control[readonly]{
+        color: $text-color-level2;
+    }
+    .container{
+        color: $text-color-level2;
+    }
+    .card-header{
+        background-color: $white-color;
+        border-bottom: 1px solid $header-border-level2;
+    }
+    .card.crop-detail .row,.card.crop-detail .nav.nav-tabs{
+        background-color: $aside-bg-level2;
+    }
+    .card.crop-detail .list-group-item{
+        background-color: $aside-bg-level2;
+        border-bottom: 1px solid $white-color !important;
+        color:$title-bg-level2;
+    }
+    .card.crop-detail .nav-tabs > li.active > a,.card.crop-detail .list-group-item.active,.c-token,
+    .card.crop-detail .tab-content{
+        background-color:$common-bg-level2 !important;
+        border: none !important;
+        border-radius: 0;
+    }
+    .card.crop-detail .col-sm-9{
+        background-color:$tab-bg-level;
+    }
+    .idx-btn-save{
+        background-color: $white-color;
+    }
+    .modal-body .nav-pills .nav-link.active {
+        color: $aside-border-level2;
+        background-color: $aside-bg-level2;
+        border: 1px solid $header-border-level2;
+    }
+    .modal-body .nav-link{
+        background-color: $aside-bg-level2;
+    }
+    #img-container .bannerImg{
+        border: 1px solid $header-border-level2;
+    }
+    #img-container .col-sm-6{
+        border: 5px solid $header-border-level2;
+    }
+    .btn-secondary {
+        background-color: $title-active-bg-level2;
+        border-color: $title-active-bg-level2;
+    }
+    input[readonly]{
+        color: #000 !important;
+    }
+    .modal-header .close{
+        color:white;
+    }
+    .ag-header-cell-menu-button{
+        opacity: 1 !important;
+    }
+    .card.quality .card-header{
+        background-color: #4898E1 !important;
+    }
+    .button-list{
+        button{
+            background-color: #4898E1;
+        }
+    }
+    .jujube{
+        .text-center{
+            .table-title{
+                background-color: rgba(72,152,225,0.1);
+                color: #4898E1;
+            }
+            .col-lg-1{
+                color: #4898E1;
+            }
+        }
+    }
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 2048px;
+    }
+}

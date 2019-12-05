@@ -1,0 +1,49 @@
+<form [formGroup]="basicform" (ngSubmit)="onSubmit(basicform.value)" class="form-horizontal">
+  <ba-card title="基本信息" baCardClass="with-scroll">
+    <div class="form-group row">
+      <label for="txtUserName" class="col-sm-2 control-label">用户名</label>
+
+      <div class="col-sm-10">
+        <input [formControl]="username" type="text" class="form-control" [(ngModel)]="currUser.username"
+          id="txtUserName" placeholder="用户名" disabled>
+      </div>
+    </div>
+    <div class="form-group row"
+      [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+      <label for="txtName" class="col-sm-2 control-label">真实姓名</label>
+
+      <div class="col-sm-10">
+        <input [formControl]="name" type="text" class="form-control" [(ngModel)]="currUser.cnname" id="txtName"
+          placeholder="真实姓名">
+      </div>
+    </div>
+  </ba-card>
+  <ba-card title="联系方式" baCardClass="with-scroll">
+    <div class="form-group row"
+      [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+      <label for="txtEmail" class="col-sm-2 control-label">邮箱</label>
+
+      <div class="col-sm-10">
+        <input [formControl]="email" type="email" class="form-control" [(ngModel)]="currUser.email" id="txtEmail"
+          placeholder="邮箱">
+      </div>
+    </div>
+    <div class="form-group row"
+      [ngClass]="{'has-error': (!phone.valid && phone.touched), 'has-success': (phone.valid && phone.touched)}">
+      <label for="txtPhone" class="col-sm-2 control-label">手机号</label>
+
+      <div class="col-sm-10">
+        <input [formControl]="phone" type="text" class="form-control" [(ngModel)]="currUser.mobilePhone" id="txtPhone"
+          placeholder="手机号">
+      </div>
+    </div>
+  </ba-card>
+  <div class="form-group row">
+    <div class="col-sm-4 control-label"></div>
+    <div class="offset-sm-1 col-sm-3">
+      <button [disabled]="!basicform.valid" type="submit" class="btn yz-btn" [ngClass]="btnClassLevel">保存</button>
+    </div>
+    <div class="col-sm-5 control-label"></div>
+  </div>
+</form>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

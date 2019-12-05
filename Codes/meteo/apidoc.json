@@ -1,0 +1,21 @@
+{
+  "name": "智慧农气数据服务接口",
+  "version": "0.0.1",
+  "description": "API接口文档",
+  "title": "智慧农气数据服务接口帮助文档",
+  "url": "http://www.cagmss.com:8090/api",
+  "header": {
+    "title": "智慧农气数据服务"
+  },
+  "order": [
+    "list",
+    "detail",
+    "create",
+    "update",
+    "delete"
+  ],
+  "template": {
+    "withCompare": false,
+    "withGenerator": false
+  }
+}

@@ -1,0 +1,168 @@
+<div class="_container" ></div>
+<div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div *ngIf="indexType==1" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtClasses" class="col-sm-2 control-label">级别</label>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtClasses" min="1" max="10" [value]="selIndexInfo.classes" (blur)="onClassesChange($event.target.value)"
+                />
+            </div>
+
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3 control-label">
+                <button type="button" class="btn btn-primary" (click)="addClasses(selIndexInfo.classes)" style="border: none">添加</button>
+            </div>
+        </div>
+
+        <div *ngFor="let ci of selIndexInfo.values" class="form-group row">
+            <div class="col-sm-4">
+                <input type="text" [value]="ci.name" (change)="onNameChange($event.target, ci)" />
+            </div>
+
+            <label class="col-sm-1 control-label">：</label>
+
+            <div class="col-sm-3">
+                <input type="number" name="txtLow" [value]="ci.min" (change)="onRangeChange($event.target,ci)" />
+            </div>
+
+            <label class="col-sm-1 control-label">~</label>
+
+            <div class="col-sm-3">
+                <input type="number" name="txtUp" [value]="ci.max" (change)="onRangeChange($event.target,ci)" />
+            </div>
+        </div>
+    </div>
+    <div *ngIf="indexType==2" class="form-horizontal">
+            <table class="text-center w-100" style="border-collapse:separate; border-spacing:0px 20px;">
+                <tr>
+                    <td width="70" class="text-left">监测</td>
+                    <td width="50">
+                        <input type="number" name="txtClasses" min="1" max="30" [value]="jiance.total" (change)="onDateChange($event.target,jiance)" />
+                    </td>
+                    <td width="40">天</td>
+                    <td class="pr-2">
+                        <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selDayEleItem" (ngModelChange)="onEleChange($event,'day')">
+                            <option *ngFor="let ele of dayList" [ngValue]="ele">{{ele.desc}}</option>
+                        </select>
+                    </td>
+                    <td width="60">
+                        <input type="number" name="txtLow" [value]="jiance.min" (change)="onRangeChange($event.target,jiance)" />
+                    </td>
+                    <td width="60">~</td>
+                    <td width="60">
+                        <input type="number" name="txtUp" [value]="jiance.max" (change)="onRangeChange($event.target,jiance)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="70" class="text-left">预报</td>
+                    <td width="50">
+                        
+                    </td>
+                    <td width="40"></td>
+                    <td class="pr-2">
+                        <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selMosEleItem" (ngModelChange)="onEleChange($event,'mos')">
+                            <option *ngFor="let ele of mosList" [ngValue]="ele">{{ele.desc}}</option>
+                        </select>
+                    </td>
+                    <td width="60">
+                        <input type="number" name="txtLow" [value]="yubao.min" (change)="onRangeChange($event.target,yubao)" />
+                    </td>
+                    <td width="60">~</td>
+                    <td width="60">
+                        <input type="number" name="txtUp" [value]="yubao.max" (change)="onRangeChange($event.target,yubao)" />
+                    </td>
+                </tr>
+            </table>
+
+            <!-- <label for="txtClasses" class="col-sm-2 control-label">条件</label>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtClasses" min="1" max="10" [value]="selIndexInfo.classes" (blur)="onClassesChange($event.target.value)" />
+            </div>
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+            <div class="col-sm-3 control-label">
+                <button type="button" class="btn btn-primary" (click)="addClasses(selIndexInfo.classes)">添加</button>
+            </div> -->
+        <!-- <div *ngFor="let ci of selIndexInfo.values" class="form-group row">
+            <label for="txtDate" class="col-sm-2 control-label">连续</label>
+        
+            <div class="col-sm-3 input-group">
+                <input class="col-8" type="number" name="txtDate" min="1" max="30" [value]="ci.total" (change)="onDateChange($event.target,ci)"
+                />
+                <span class="input-group-addon">天</span>
+            </div>
+        
+            <div class="col-sm-2">
+                <input type="number" name="txtLow" [value]="ci.min" (change)="onRangeChange($event.target,ci)" />
+            </div>
+        
+            <label class="col-sm-1 control-label">~</label>
+        
+            <div class="col-sm-2">
+                <input type="number" name="txtUp" [value]="ci.max" (change)="onRangeChange($event.target,ci)" />
+            </div>
+        </div> -->
+    </div>
+    <div *ngIf="indexType==3" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <ba-switch [checked]="selIndexInfo.values[0].isValid" color="green" (change)="onValueChange($event)"></ba-switch>
+            </div>
+        </div>
+    </div>
+    <!--<div *ngIf="indexType==4" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-2">
+                <select class="form-control">
+                    <option [value]="0">>=</option>
+                    <option [value]="1">&lt;=</option>
+                    <option [value]="2">></option>
+                    <option [value]="3">&lt;</option>
+                </select>
+            </div>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtIndexValue" />
+            </div>
+        </div>
+    </div>-->
+</div>
+<div class="modal-footer pt-0">
+    <button class="btn btn-default confirm-btn" (click)="closeModal()"> 确 定 </button>
+</div>

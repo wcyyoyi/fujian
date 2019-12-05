@@ -1,0 +1,110 @@
+@import "../../scss/color";
+:host #{"/deep/"} .crop-list {
+    width: 100%;
+    // .nav-tabs .nav-item>:first-child>a{
+    //     border-radius:5px 0 0 0;
+    // }
+    // .nav-tabs .nav-item>:last-child>a{
+    //     border-radius:0 5px 0 0;
+    // }
+    min-height: calc(100% - 40px);
+    .nav.nav-tabs a {
+        color: #000000;
+    }
+    .nav.nav-tabs a:hover {
+        border: none;
+        color: #000000;
+        background-color: transparent;
+    }
+    .nav-tabs .nav-item {
+        background-color: #ffffff;
+    }
+    // .nav.nav-tabs>li:first-of-type a {
+    //     border-top-left-radius: 5px;
+    // }
+    // .nav.nav-tabs>li:last-of-type a {
+    //     border-top-right-radius: 5px;
+    // }
+    .nav.nav-tabs>li.active>a {
+        color: #ffffff;
+        background-color: #007bff;
+        &:hover {
+            color: #ffffff;
+        }
+    }
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: #fff !important;
+        background-color: #007bff;
+        border-radius: 0;
+    }
+    .tab-content {
+        padding: 0;
+        // background: #ffffff;
+        // min-height: calc(100% - 40px); // height: 120%;
+    }
+
+    &-level1{
+        .nav.nav-tabs>li.active>a {
+            color: #ffffff;
+            background-color: $yz-level1-primary3;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+    &-level2{
+        .nav.nav-tabs>li.active>a {
+            color: #ffffff;
+            background-color: $yz-level2-primary3;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+    &-level3{
+        .nav.nav-tabs>li.active>a {
+            color: #ffffff;
+            background-color: $yz-level3-primary3;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.searchForm {
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    // border: 1px dashed gray;
+    position: relative;
+}
+
+:host #{"/deep/"} .radio-label {
+    span {
+        padding: 10px 15px;
+        margin: 5px;
+        color: #000000;
+        min-width: 80px;
+        display: inline-block;
+        line-height: 1em;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    
+}
+:host #{"/deep/"} .w-30{
+    min-width: 30% !important;
+}
+
+:host #{"/deep/"} hr{
+    width: 100%;
+    margin: 10px 0 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}

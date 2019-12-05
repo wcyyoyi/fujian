@@ -1,0 +1,12 @@
+<div class="task-todo-container">
+  <ul class="todo-list">
+    <li *ngFor="let item of getNotDeleted()" [ngClass]="{checked: selectedItem.text === item.text, active: item.isActive}" (mouseenter)="item.isActive=true"
+      (mouseleave)="item.isActive=false" (click)="onChanged(item,$event)" >
+      <label class="todo-checkbox">
+        <img src="/assets/img/skin/{{item.name}}.png" />
+        <span>{{ item.text }}</span>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </label>
+    </li>
+  </ul>
+</div>

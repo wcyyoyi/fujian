@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <a class="col-md-3 text-center bg-dark text-white rounded-right" (click)="pagination(-1)">&lt;&lt;上一项</a>
+        <span class="col-md-6 text-center">第{{num+1}}条信息</span>
+        <a class="col-md-3 text-center bg-dark text-white rounded-left" (click)="pagination(1)">下一项&gt;&gt;</a>
+        <br>
+    </div>
+    <div class="text-center">
+        <img src={{src}} style="width: 100%;">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">关闭</button>
+</div>

@@ -1,0 +1,42 @@
+<div class="al-main">
+  <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+  <div class="al-sidebar-left" style="width:225px">
+    <ba-card class="contain" baCardClass="with-scroll todo-panel">
+      <todo [map]="mapbox" #todo *ngIf="mapLoad"></todo>
+    </ba-card>
+  </div>
+
+  <div class="middle-map" style="position: relative" *ngIf="IfGetData">
+    <div class="map-select">
+      <span>地图选择</span>
+      <select (change)=refresh($event) class="maps-select">
+        <option value="0">默认</option>
+        <option value="1">CAgMSS版</option>
+      </select>
+    </div>
+    <!-- <mapbox-maps #mapbox mapIndex="{{mapIndex}}"></mapbox-maps> -->
+    <yz-ngx-map #mapbox [mapUrl]="mapUrl" [showNavigation]="true" [isTransform]="false" (onMapLoad)="mapload($event)"
+      (onMapDraw)="mapDrawChange($event)" [showDraw]="true" [showLOC]="true" [center]="center" [zoom]="zoom">
+    </yz-ngx-map>
+    <div class='map-overlay' id="yearSelect" style="display: none">
+      <div class='map-overlay-inner'>
+        <span>当前年份</span>
+        <select [ngModel]="selYear" (ngModelChange)="onYearChange($event);">
+          <option *ngFor="let item of getYears()" [ngValue]="item">{{item}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="al-sidebar-right">
+    <ba-card class="contain" baCardClass="with-scroll right-alert {{alertClassLevel}}" iconClass="fa fa-bell"
+      title="预警信息">
+      <calendar></calendar>
+    </ba-card>
+    <ba-card class="contain" baCardClass="with-scroll right-about {{aboutClassLevel}}" iconClass="fa fa-heart"
+      title="关注">
+      <div style="text-indent: 28px" id="tendProd"></div>
+    </ba-card>
+  </div>
+
+</div>

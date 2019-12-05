@@ -1,0 +1,36 @@
+<div class="modal-body" [ngClass]="areaChooseClassLevel">
+    <div class="bg-light rounded border p-3">
+        <div class="mb-2" *ngIf="proListShow.length>0">
+            <div class="row m-0 mb-1">省级:</div>
+            <div class="row m-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item" *ngFor="let item of proListShow;">
+                        <a class="nav-link p-2" (click)="selectDistrict(item)" data-toggle="pill" style="cursor: pointer;" *ngIf="item.isVailable"> {{item.cName}}</a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="mb-2" *ngIf="cityListShow.length>0">
+            <div class="row m-0 mb-1">市级:</div>
+            <div class="row m-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item" *ngFor="let item of cityListShow;">
+                        <a class="nav-link" (click)="selectDistrict(item)" data-toggle="pill" style="cursor: pointer;" *ngIf="item.isVailable"> {{item.cName}}</a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="mb-2" *ngIf="counListShow.length>0">
+            <div class="row m-0 mb-1">县级:</div>
+            <div class="row m-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item" *ngFor="let item of counListShow;">
+                        <a class="nav-link" (click)="selectDistrict(item)" data-toggle="pill" style="cursor: pointer;" *ngIf="item.isVailable"> {{item.cName}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

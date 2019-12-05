@@ -1,0 +1,52 @@
+<ba-card title="农田小气候数据监控" baCardClass="with-scroll h-100 m-0">
+    <div id="carouselControls" class="carousel slide h-100" data-ride="carousel" data-interval="0">
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+                <div id="dataTable" class="h-100">
+                    <div class=" row" style="height: 40px;">
+                        <div class="col-4">
+                            <button (click)="plusMinute(-1)">&lt;</button>
+                            <span
+                                style="display: inline-block;width: 150px;text-align: center;">{{getDateTimeStr(date)}}</span>
+                            <button (click)="plusMinute(1);">&gt;</button>
+                        </div>
+                        <div class="col-2">
+                            间隔：
+                            <select [(ngModel)]="timeUnit">
+                                <option value=1>1分钟</option>
+                                <option value=5>5分钟</option>
+                                <option value=30>30分钟</option>
+                                <option value=60>60分钟</option>
+                                <option value=1440>1天</option>
+                            </select>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="#carouselControls" data-slide="next">数据详情&nbsp;<yz-ngx-icon group="ion"
+                                    name="md-arrow-round-forward">
+                                </yz-ngx-icon>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="height: calc(100% - 35px);">
+                        <yz-ngx-grid #grid [settings]="settings" [source]="source"></yz-ngx-grid>
+                    </div>
+                    <div class="result" style="position: absolute;bottom:0">
+                        共<span id="total" (click)="filter(-1)"></span>个站点，其中合格<span id="correct" (click)="filter(1)"></span>个，不合格<span
+                            id="incorrect" (click)="filter(0)"></span>个。
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <div id="chart" class="h-100">
+                    <a href="#carouselControls" data-slide="prev">
+                        <yz-ngx-icon group="ion" name="md-arrow-round-back"></yz-ngx-icon>&nbsp;数据详情
+                    </a>
+                    <div id="chart" class="h-100" echarts [options]="option" theme="macarons" style="background-color: white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ba-card>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

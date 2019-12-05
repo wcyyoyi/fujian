@@ -1,0 +1,196 @@
+:host #{"/deep/"} .crop-list {
+    width: 100%;
+    height: 130px; // border: 1px solid silver;
+    word-wrap: break-word;
+    padding-top: 38px;
+    a {
+        color: #337ab7;
+    }
+    .nav-tabs {
+        border-bottom: 1px solid #ddd;
+        margin-top: -38px;
+    }
+    .nav-tabs>li>a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 4px 4px 0 0;
+    }
+    .nav-tabs>li>a:hover {
+        color: #23527c;
+        border-color: #eee #eee #ddd;
+    }
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+    }
+    .tab-content {
+        border: 1px solid #ccc;
+        border-top-color: transparent;
+        background-color: #fff;
+        overflow-y: auto;
+        height: 100%;
+    }
+    nav.ng2-smart-pagination-nav {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        .ng2-smart-pagination {
+            display: inherit;
+        }
+    }
+}
+
+.list-group-item {
+    margin: 0;
+    border: 0;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.125);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    // background-color: white;
+    width: 40px;
+}
+.carousel-control-next-icon{
+    background-image: url(../../../../../assets/prodDisplay/icon/rightarrow.png);
+    width: 20px;
+    height: 40px;
+}
+.carousel-control-prev-icon{
+    background-image: url(../../../../../assets/prodDisplay/icon/leftarrow.png);
+    width: 20px;
+    height: 40px;
+}
+
+.carousel-fade .carousel-inner .carousel-item {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .carousel-item,
+.carousel-fade .carousel-inner .active.carousel-item-left,
+.carousel-fade .carousel-inner .active.carousel-item-right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-inner .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+.carousel-vertical .carousel-inner .carousel-item-next.carousel-item-left,
+.carousel-vertical .carousel-inner .carousel-item-prev.carousel-item-right {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.carousel-vertical .carousel-inner .active.carousel-item-left,
+.carousel-vertical .carousel-inner .carousel-item-prev {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.carousel-vertical .carousel-inner .active.carousel-item-right,
+.carousel-vertical .carousel-inner .carousel-item-next {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.carousel-indicators li{
+    background-color: #e1e1e1;
+}
+
+.carousel-indicators .active{
+    background-color: #ffc035;
+}
+
+.menu a:active,
+a:visited {
+    background-color: #55A7C4;
+    color: #ffffff;
+}
+
+.bg-title {
+    line-height: 35px;
+    vertical-align: middle;
+    background-image: linear-gradient(to top, #078cbe, #17cbd2);
+}
+
+.tag {
+    width: 80px;
+    padding: 5px;
+    margin: 5px 10px; // height: 20px;
+    cursor: pointer;
+    color: white !important;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.tag-green {
+    background-color: #84b59d;
+}
+
+.tag-orange {
+    background-color: #ed764e;
+}
+
+.tag-blue {
+    background-color: #214189;
+}
+
+.finder {
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../../../../../assets/prodDisplay/icon/finder.png);
+}
+
+.sun {
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../../../../../assets/prodDisplay/icon/sun.png);
+}
+
+.overlap {
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../../../../../assets/prodDisplay/icon/overlap.png);
+}
+
+.loading {
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../../../../assets/prodDisplay/icon/loading.gif);
+}
+
+.list-group-item{
+    height: 41px;
+}

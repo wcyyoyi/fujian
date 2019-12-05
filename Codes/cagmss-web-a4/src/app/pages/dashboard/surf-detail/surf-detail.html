@@ -1,0 +1,81 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{statname}}监测数据</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true" style="font-size: 24px">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row mb-3">
+        <div class="row col-8 form-group pl-0">
+            <label class="col-3" style="color:black">时间选择</label>
+            <input type="text" class="col-3 dataSelect" [(ngModel)]="startDate" [bsConfig]="bsConfig"
+                [container]="surf-detail" bsDatepicker [maxDate]="endDate" readonly>
+            &nbsp;至&nbsp;<input type="text" class="col-3 dataSelect" [(ngModel)]="endDate" [bsConfig]="bsConfig"
+                bsDatepicker [container]="surf-detail" [maxDate]="now" readonly> 
+            <button class="col-2 btn yz-btn ml-2" [ngClass]="btnClassLevel" (click)="customQueryDay()">
+                查询
+            </button>
+        </div>
+        <div class="row col-4 form-group" id="dateLimit-choose">
+            <button class="col-4 active" (click)="onLimitDaysChange(7,$event)">过去7天</button>
+            <button class="col-4" (click)="onLimitDaysChange(10,$event)">过去10天</button>
+            <button class="col-4" (click)="onLimitDaysChange(15,$event)">过去15天</button>
+        </div>
+    </div>
+
+    <div class="row mb-3 form-group" style="color:black">
+        <label class="col-2">要素</label>
+        <label class="col-2"><input type="radio" value="v12001" name="selEle" (click)="onEleChange($event)"
+                checked>温度</label>
+        <label class="col-2"><input type="radio" value="v13201" name="selEle" (click)="onEleChange($event)">降水</label>
+        <label class="col-2"><input type="radio" value="v14032" name="selEle" (click)="onEleChange($event)">光照</label>
+        <label class="col-2"><input type="radio" value="v11002" name="selEle" (click)="onEleChange($event)">风速</label>
+    </div>
+    <div class="row w-100" style="height: 400px;">
+        <div id="chart" echarts [options]="option" class="w-100 h-100"></div>
+    </div>
+    <div class="row justify-content-between align-items-center hourData"
+        style="height: 40px;background-color: #dee2e6;border-radius: 5px;">
+        <span class="col-4">实时监测资料</span>
+        <div class="col-4 text-right">
+            <button (click)="plusHour(-1)">&lt;</button>
+            <span>{{hourDate.toLocaleDateString()}}&nbsp;{{hourDate.getHours()}}:00:00</span>
+            <button (click)="plusHour(1)">&gt;</button>
+        </div>
+    </div>
+    <div *ngIf="hourData" class="hourData">
+        <div class="row">
+            <div class="col-4"><span>
+                    <yz-ngx-icon name="heigh-temp"></yz-ngx-icon>
+                    24小时最高气温：{{hourData.v12016}}°C
+                </span></div>
+            <div class="col-4"><span>
+                    <yz-ngx-icon name="low-temp"></yz-ngx-icon>
+                    24小时最低气温：{{hourData.v12017}}°C
+                </span></div>
+            <div class="col-4"><span>
+                    <yz-ngx-icon name="wind"></yz-ngx-icon>
+                    风向风速：<span id="wind">F</span>
+                    {{hourData.v11002}} m/s
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"><span>
+                    <yz-ngx-icon name="humidity"></yz-ngx-icon>
+                    相对湿度：{{hourData.v13003}}%
+                </span></div>
+            <div class="col-4"><span>
+                    <yz-ngx-icon name="rain"></yz-ngx-icon>
+                    观测前24小时降水量：{{hourData.v13023}}mm
+                </span></div>
+            <div class="col-4"><span>
+                    <yz-ngx-icon name="weathor"></yz-ngx-icon>
+                    天气现象：{{hourData.weathor}}
+                </span></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

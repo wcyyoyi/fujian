@@ -1,0 +1,84 @@
+@import '../../../theme/sass/conf/conf';
+@import '../../scss/color';
+dashboard .row{
+    text-align: center;
+}
+.crop{
+    background-color: white;
+    position: relative;
+    padding: 5px;
+}
+.figure{
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+.arrow{
+    position: absolute;
+    top: -2px;
+    right: -1px;
+    img{
+        cursor: pointer;
+    }
+}
+.card.todo-panel {
+    background-color: $sidebar;
+    height: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+    .card-body {
+        height: 100%;
+        padding: 0;
+    }
+}
+.todo-title{
+    padding: 10px;
+    text-align: right;
+}
+.todo-list {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    .row{
+        margin: 0;
+    }
+}
+
+.task-todo-container {
+    height:100%;
+    .todo-list {
+        height: 100%;
+    }
+
+}
+.legend {
+    color: #333333;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    display: block;
+}
+
+.legend h4 {
+    margin: 0 0 10px;
+}
+
+.legend div span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+}
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}

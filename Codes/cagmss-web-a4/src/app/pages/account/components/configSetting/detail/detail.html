@@ -1,0 +1,51 @@
+<div class="modal-content" style="border: none">
+    <div class="modal-header">
+        <p class="modal-title pull-left">{{title}}</p>
+        <img src="assets/img/close.jpg" alt="" class="img-close" (click)="bsModalRef.hide()">
+    </div>
+    <div class="modal-body" style="height:86%;overflow:auto;padding: 5% 10%">
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal bookmark">
+            <div class="form-group row" *ngIf="option=='add'">
+                <label for="selTemplateType" class="col-sm-2 control-label">模版类型</label>
+                <div class="col-sm-10">
+                    <select class="form-control" [ngModel]="nowTemplateType" [formControl]="selTemplateType">
+                        <option [ngValue]="_type.value" *ngFor="let _type of templateType">{{_type.desc}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="bookmarkType" class="col-sm-2 control-label">书签类型</label>
+                <div class="col-sm-10">
+                    <select class="form-control" [ngModel]="bookMark.bookmarkType" [formControl]="bookmarkType"
+                        disabled>
+                        <option [ngValue]="type.code" *ngFor="let type of MarkType">{{type.desc}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="bookmarkDesc" class="col-sm-2 control-label">书签描述</label>
+                <div class="col-sm-10">
+                    <input [formControl]="bookmarkDesc" type="text" class="form-control"
+                        [(ngModel)]="bookMark.bookmarkDesc" id="bookmarkDesc" placeholder="书签描述">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="bookmarkContent" class="col-sm-2 control-label">书签内容</label>
+                <div class="col-sm-10">
+                    <textarea name="bookmarkContent" id="bookmarkContent" cols="30" rows="10"
+                        [(ngModel)]="bookMark.bookmarkContent" class="form-control" [formControl]="bookmarkContent"
+                        placeholder="书签内容"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4 control-label"></div>
+                <div class="offset-sm-1 col-sm-3">
+                    <button [disabled]="!form.valid" type="submit" class="btn yz-btn"
+                        [ngClass]="btnClassLevel">提交</button>
+                </div>
+                <div class="col-sm-5 control-label"></div>
+            </div>
+        </form>
+    </div>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

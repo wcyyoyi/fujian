@@ -1,0 +1,36 @@
+[
+    {
+        "name": "WCRM",
+        "children": [
+            {
+                "name": "月报",
+                "element": "MONT"
+            },
+            {
+                "name": "旬报",
+                "element": "TEND"
+            },
+            {
+                "name": "周报",
+                "element": "WEEK"
+            }
+        ]
+    },
+    {
+        "name": "AWFC",
+        "children": [
+            {
+                "name": "春耕春播",
+                "element": "SPRS-PLO-SOW"
+            },
+            {
+                "name": "夏收夏种",
+                "element": "SUMS-HAR-SOW"
+            },
+            {
+                "name": "秋收秋种",
+                "element": "AUTS-HAR-SOW"
+            }
+        ]
+    }
+]

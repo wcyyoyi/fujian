@@ -1,0 +1,118 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div *ngIf="indexType==1" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtClasses" class="col-sm-2 control-label">级别</label>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtClasses" min="1" max="10" [value]="selIndexInfo.classes" (blur)="onClassesChange($event.target.value)" />
+            </div>
+
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3 control-label">
+                <button type="button" class="btn btn-primary" (click)="addClasses(selIndexInfo.classes)">添加</button>
+            </div>
+        </div>
+
+        <div *ngFor="let ci of selIndexInfo.values" class="form-group row">
+            <div class="col-sm-4">
+                <input type="text" [value]="ci.name" (change)="onNameChange($event.target, ci)" />
+            </div>
+
+            <label class="col-sm-1 control-label">：</label>
+
+            <div class="col-sm-3">
+                <input type="number" name="txtLow" [value]="ci.min" (change)="onRangeChange($event.target,ci)" />
+            </div>
+
+            <label class="col-sm-1 control-label">~</label>
+
+            <div class="col-sm-3">
+                <input type="number" name="txtUp" [value]="ci.max" (change)="onRangeChange($event.target,ci)" />
+            </div>
+        </div>
+    </div>
+    <div *ngIf="indexType==2" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtDate" class="col-sm-2 control-label">连续</label>
+
+            <div class="col-sm-3 input-group">
+                <input type="number" name="txtDate" min="1" max="30" [value]="selIndexInfo.values[0].total" (change)="onDateChange($event.target.value)" />
+                <div class="input-group-addon">天</div>
+            </div>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtLow" [value]="selIndexInfo.values[0].min" (change)="onRangeChange($event.target,selIndexInfo.values[0])" />
+            </div>
+
+            <label class="col-sm-1 control-label">~</label>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtUp" [value]="selIndexInfo.values[0].max" (change)="onRangeChange($event.target,selIndexInfo.values[0])" />
+            </div>
+        </div>
+    </div>
+    <div *ngIf="indexType==3" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <ba-switch [checked]="selIndexInfo.values[0].isValid" color="green" (change)="onValueChange($event)"></ba-switch>
+            </div>
+        </div>
+    </div>
+    <!--<div *ngIf="indexType==4" class="form-horizontal">
+        <div class="form-group row">
+            <label for="txtEle" class="col-sm-2 control-label">要素</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" id="txtEle" placeholder="要素" [ngModel]="selEleItem" (ngModelChange)="onEleChange($event)">
+                    <option *ngFor="let ele of eleList" [ngValue]="ele">{{ele.desc}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-2">
+                <select class="form-control">
+                    <option [value]="0">>=</option>
+                    <option [value]="1">&lt;=</option>
+                    <option [value]="2">></option>
+                    <option [value]="3">&lt;</option>
+                </select>
+            </div>
+
+            <div class="col-sm-2">
+                <input type="number" name="txtIndexValue" />
+            </div>
+        </div>
+    </div>-->
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default confirm-btn" (click)="closeModal()"> 确 定 </button>
+</div>

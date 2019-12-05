@@ -1,0 +1,75 @@
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+    <ba-card title="新建区域" baCardClass="with-scroll">
+        <div class="form-group row">
+            <label for="cCode" class="col-sm-2 control-label">区域代码</label>
+            <div class="col-sm-8">
+                <input [formControl]="cCode" type="number" class="form-control" [(ngModel)]="currArea.cCode" id="cCode"
+                    placeholder="区域代码">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="cName" class="col-sm-2 control-label">城市名称</label>
+
+            <div class="col-sm-8">
+                <input [formControl]="cName" type="text" class="form-control" [(ngModel)]="currArea.cName" id="cName"
+                    placeholder="城市名称">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="vLevel" class="col-sm-2 control-label">区域等级</label>
+            <div class="col-sm-8">
+                <select class="form-control" [ngModel]="currArea.vLevel" [formControl]="vLevel">
+                    <option [ngValue]="level.value" *ngFor="let level of levelList">{{level.desc}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="v05001" class="col-sm-2 control-label">纬度</label>
+
+            <div class="col-sm-8">
+                <input [formControl]="v05001" type="number" class="form-control" [(ngModel)]="currArea.v05001" id="v05001"
+                    placeholder="纬度">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="v06001" class="col-sm-2 control-label">经度</label>
+
+            <div class="col-sm-8">
+                <input [formControl]="v06001" type="number" class="form-control" [(ngModel)]="currArea.v06001" id="v06001"
+                    placeholder="经度">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="cPCode" class="col-sm-2 control-label">区域产品编码</label>
+            <div class="col-sm-8">
+                <input [formControl]="cPCode" type="text" class="form-control" [(ngModel)]="currArea.cPCode" id="cPCode"
+                    placeholder="区域产品编码">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="serviceUrl" class="col-sm-2 control-label">服务器地址</label>
+
+            <div class="col-sm-8">
+                <input [formControl]="serviceUrl" type="text" class="form-control" [(ngModel)]="currArea.serviceUrl"
+                    id="serviceUrl" placeholder="服务器地址">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mapUrl" class="col-sm-2 control-label">地图地址</label>
+
+            <div class="col-sm-8">
+                <input [formControl]="mapUrl" type="text" class="form-control" [(ngModel)]="currArea.mapUrl" id="mapUrl"
+                    placeholder="地图地址">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 control-label"></div>
+            <div class="offset-sm-1 col-sm-3">
+                <button [disabled]="!form.valid" type="submit" class="btn yz-btn" [ngClass]="btnClassLevel">提交</button>
+            </div>
+            <div class="col-sm-5 control-label"></div>
+        </div>
+    </ba-card>
+
+</form>

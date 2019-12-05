@@ -1,0 +1,111 @@
+@import '../../../../../theme/sass/conf/conf';
+// @import '~ckeditor/contents';
+// @import '~ckeditor/plugins/copyformatting/styles/copyformatting.css';
+// @import '~ckeditor/plugins/scayt/skins/moono-lisa/scayt.css';
+// @import '~ckeditor/plugins/wsc/skins/moono-lisa/wsc.css';
+// @import '~ckeditor/skins/moono-lisa/editor.css';
+// @import '~ckeditor/skins/moono-lisa/icons.png';
+:host #{"/deep/"} .cke_source {
+    color: $dropdown-text !important;
+}
+
+:host #{"/deep/"} .document-editor {
+    // height: 100%;
+    width: 15.8cm;
+    min-height: 21cm;
+    padding: 1cm 2cm 2cm;
+    margin: 0.5cm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+body.document-editor,
+body.document-editor td,
+body.document-editor th {
+    font-size: 0.9em;
+}
+
+body.document-editor table {
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+
+body.document-editor h1 {
+    margin-bottom: 1cm;
+}
+
+:host #{"/deep/"} .cke_reset {
+    height: 100%;
+}
+:host #{"/deep/"}.tab-list .nav-item{
+    width: 33.3%;
+}
+:host #{"/deep/"}.tab-list .row{
+    margin: 10px 0;
+    text-align: center;
+}
+:host #{"/deep/"}.tab-list .nav-pills .nav-link{
+    border: none;
+    padding: 10px 5px;
+    text-align: center;
+}
+.detail-edit{
+    position: relative;
+}
+.mark-list{
+    position: absolute;
+    right: 0;
+    height: calc(100% - 16px);
+    overflow: auto;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 0 5px 5px 0;
+    
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -ms-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    visibility: 0;
+    opacity: 0;
+    width: 0; 
+}
+.mark{
+    margin: 5px;
+    color: gray;
+}
+.detail_wrap{ // 这是初始状态
+    transition: width 0.4s ease-out, opacity 0.2s ease-in, visibility 0.2s ease-in;
+    width: 0;
+    height: '80%';
+    visibility: 0;
+    opacity: 0;
+}
+.active { // 这是滑入状态
+        opacity: 1;
+        visibility: 1;
+        width: 250px;
+    }
+
+@keyframes bounceInLeft {
+    0% {
+      opacity: 0;
+      transform: translate3d(-3000px, 0, 0);
+    }
+    60% {
+      opacity: 1;
+      transform: translate3d(25px, 0, 0);
+    }
+    75% {
+      transform: translate3d(-10px, 0, 0);
+    }
+    90% {
+      transform: translate3d(5px, 0, 0);
+    }
+    100% {
+      transform: none;
+    }
+  }

@@ -1,0 +1,14 @@
+<ul class="nav nav-pills navbar-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="height: 42px">
+            <ba-menu-item class="nav-item" [menuItem]="item" [ngClass]="{'selected': item.selected && !item.expanded}"
+                *ngFor="let item of menuItems"></ba-menu-item>
+        </div>
+    </nav>
+</ul>
+<div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}"
+    [ngClass]="{'show-hover-elem': showHoverElem }"></div>

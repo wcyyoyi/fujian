@@ -1,0 +1,14 @@
+@import '../../theme/sass/conf/conf';
+
+.al-sidebar-left {
+  width: $sidebar-width;
+  top: $top-height;
+  left: 0;
+  z-index: 1001;
+  display: block;
+  min-height: 100%;
+  background-color: $sidebar;
+  height: 100%;
+  position: fixed;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+}

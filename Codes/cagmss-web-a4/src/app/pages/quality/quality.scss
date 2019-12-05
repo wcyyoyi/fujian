@@ -1,0 +1,57 @@
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+.al-main3 {
+    padding: 142px 0 0 0;
+    min-height: 100%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.quality-left {
+    max-width: 220px;
+    height: 100%;
+    padding: 10px 0 0 10px;
+
+    .card.with-scroll .card-body {
+        padding: 10px;
+    }
+}
+
+.quality-right {
+    max-width: 410px;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 10px 10px 0 0;
+
+    .card.with-scroll .card-body {
+        padding: 10px;
+    }
+}
+
+.middle-map {
+    height: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.button-list {
+    button {
+        width: 100%;
+        padding: 10px;
+        color: #ffffff;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+            box-shadow: none;
+            border: none;
+        }
+    }
+}
+
+.quality-card {
+    height: calc(100% - 5px);
+}

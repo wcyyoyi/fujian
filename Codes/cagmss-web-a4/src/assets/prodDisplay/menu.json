@@ -1,0 +1,321 @@
+{
+    "wordProdMenus": {
+        "id": "1",
+        "title": "数据内容",
+        "type": "radio",
+        "elements": [
+            {
+                "value": "WCRM",
+                "label": "农业气象情报",
+                "children": {
+                    "id": "2",
+                    "title": "时间要素",
+                    "type": "radio",
+                    "elements": [
+                        {
+                            "value": "MONT",
+                            "label": "月"
+                        },
+                        {
+                            "value": "TEND",
+                            "label": "旬"
+                        },
+                        {
+                            "value": "WEEK",
+                            "label": "周"
+                        }
+                    ]
+                }
+            },
+            {
+                "value": "AWFC",
+                "label": "农业天气预报",
+                "children": {
+                    "id": "3",
+                    "title": "数据要素",
+                    "type": "radio",
+                    "elements": [
+                        {
+                            "value": "SPRS-PLO-SOW",
+                            "label": "春耕春播"
+                        },
+                        {
+                            "value": "SUMS-HAR-SOW",
+                            "label": "夏收夏种"
+                        },
+                        {
+                            "value": "AUTS-HAR-SOW",
+                            "label": "秋收秋种"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "imgProdMenus": {
+        "id": "1",
+        "title": "数据内容",
+        "type": "radio",
+        "elements": [
+            {
+                "value": "WCRM",
+                "label": "农业气象情报",
+                "children": {
+                    "id": "2",
+                    "title": "时间要素",
+                    "type": "radio",
+                    "elements": [
+                        {
+                            "value": "MONT.*",
+                            "label": "月",
+                            "children": {
+                                "id": "3",
+                                "title": "气象要素（多选）",
+                                "type": "checkbox",
+                                "elements": [
+                                    {
+                                        "value": "MONT-TMX",
+                                        "label": "最高气温"
+                                    },
+                                    {
+                                        "value": "MONT-TMI",
+                                        "label": "最低气温"
+                                    },
+                                    {
+                                        "value": "MONT-TAV",
+                                        "label": "平均气温"
+                                    },
+                                    {
+                                        "value": "MONT-TTT",
+                                        "label": "小时气温"
+                                    },
+                                    {
+                                        "value": "MONT-TAT",
+                                        "label": "积温"
+                                    },
+                                    {
+                                        "value": "MONT-TAD",
+                                        "label": "气温距平"
+                                    },
+                                    {
+                                        "value": "MONT-TAL",
+                                        "label": "气温同期对比"
+                                    },
+                                    {
+                                        "value": "MONT-RRR",
+                                        "label": "累积降水"
+                                    },
+                                    {
+                                        "value": "MONT-RRD",
+                                        "label": "降水距平"
+                                    },
+                                    {
+                                        "value": "MONT-RRL",
+                                        "label": "降水同期对比"
+                                    },
+                                    {
+                                        "value": "MONT-RDP",
+                                        "label": "降水距平百分率"
+                                    },
+                                    {
+                                        "value": "MONT-SSH",
+                                        "label": "日照时数"
+                                    },
+                                    {
+                                        "value": "MONT-SSD",
+                                        "label": "日照距平"
+                                    },
+                                    {
+                                        "value": "MONT-SSL",
+                                        "label": "日照同期对比"
+                                    },
+                                    {
+                                        "value": "MONT-SDP",
+                                        "label": "日照距平百分率"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "value": "TEND.*",
+                            "label": "旬",
+                            "children": {
+                                "id": "4",
+                                "title": "气象要素（多选）",
+                                "type": "checkbox",
+                                "elements": [
+                                    {
+                                        "value": "TEND-TAT",
+                                        "label": "积温"
+                                    },
+                                    {
+                                        "value": "TEND-TAD",
+                                        "label": "气温距平"
+                                    },
+                                    {
+                                        "value": "TEND-TAL",
+                                        "label": "气温同期对比"
+                                    },
+                                    {
+                                        "value": "TEND-RRR",
+                                        "label": "累积降水"
+                                    },
+                                    {
+                                        "value": "TEND-RRD",
+                                        "label": "降水距平"
+                                    },
+                                    {
+                                        "value": "TEND-RRL",
+                                        "label": "降水同期对比"
+                                    },
+                                    {
+                                        "value": "TEND-RDP",
+                                        "label": "降水距平百分率"
+                                    },
+                                    {
+                                        "value": "TEND-SSH",
+                                        "label": "日照时数"
+                                    },
+                                    {
+                                        "value": "TEND-SSD",
+                                        "label": "日照距平"
+                                    },
+                                    {
+                                        "value": "TEND-SSL",
+                                        "label": "日照同期对比"
+                                    },
+                                    {
+                                        "value": "TEND-SDP",
+                                        "label": "日照距平百分率"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "value": "WEEK.*",
+                            "label": "周",
+                            "children": {
+                                "id": "5",
+                                "title": "气象要素（多选）",
+                                "type": "checkbox",
+                                "elements": [
+                                    {
+                                        "value": "WEEK-TMX",
+                                        "label": "最高气温"
+                                    },
+                                    {
+                                        "value": "WEEK-TMI",
+                                        "label": "最低气温"
+                                    },
+                                    {
+                                        "value": "WEEK-TAV",
+                                        "label": "平均气温"
+                                    },
+                                    {
+                                        "value": "WEEK-TTT",
+                                        "label": "小时气温"
+                                    },
+                                    {
+                                        "value": "WEEK-TAT",
+                                        "label": "积温"
+                                    },
+                                    {
+                                        "value": "WEEK-TAD",
+                                        "label": "气温距平"
+                                    },
+                                    {
+                                        "value": "WEEK-TAL",
+                                        "label": "气温同期对比"
+                                    },
+                                    {
+                                        "value": "WEEK-RRR",
+                                        "label": "累积降水"
+                                    },
+                                    {
+                                        "value": "WEEK-RRD",
+                                        "label": "降水距平"
+                                    },
+                                    {
+                                        "value": "WEEK-RRL",
+                                        "label": "降水同期对比"
+                                    },
+                                    {
+                                        "value": "WEEK-RDP",
+                                        "label": "降水距平百分率"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "value": "AWFC",
+                "label": "农业天气预报",
+                "children": {
+                    "id": "6",
+                    "title": "作物",
+                    "type": "radio",
+                    "elements": [
+                        {
+                            "value": "SIRI",
+                            "label": "一季稻",
+                            "children": {
+                                "id": "7",
+                                "title": "农事活动（多选）",
+                                "type": "checkbox",
+                                "elements": [
+                                    {
+                                        "value": "SIRI-SOW-MSI",
+                                        "label": "播种"
+                                    },
+                                    {
+                                        "value": "SIRI-HAR-MSI",
+                                        "label": "收获"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "tableProdMenus": {
+        "id": "7",
+        "title": "数据内容",
+        "type": "radio",
+        "elements": [
+            {
+                "value": "CYFC",
+                "label": "国内产量预报",
+                "children": {
+                    "id": "8",
+                    "title": "作物",
+                    "type": "radio",
+                    "elements": [
+                        {
+                            "value": "EARI.*",
+                            "label": "双季早稻",
+                            "children": {
+                                "id": "9",
+                                "title": "方法（多选）",
+                                "type": "checkbox",
+                                "elements": [
+                                    {
+                                        "value": "EARI-HFI-YSD",
+                                        "label": "丰歉指数-差值百分率法"
+                                    },
+                                    {
+                                        "value": "EARI-HFI-YSD-YIN2",
+                                        "label": "丰歉指数-差值百分率法-市级集成"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

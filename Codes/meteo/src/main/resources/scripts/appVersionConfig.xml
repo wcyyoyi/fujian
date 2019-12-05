@@ -1,0 +1,10 @@
+<appversions>
+    <appversion category="android">
+        <code>2</code>
+        <url>http://www.meteoplus.cn/wp-content/uploads/2018/03/agrometeorological.apk</url>
+    </appversion>
+    <appversion category="ios">
+        <code>1</code>
+        <url>http://www.baidu.com</url>
+    </appversion>
+</appversions>

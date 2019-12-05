@@ -1,0 +1,98 @@
+<div class="h-100 pl-3 pr-3 pt-2">
+    <yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+    <div id="slides" class="carousel slide" data-ride="carousel" data-interval="0">
+        <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let prodByDataType of prodListByDataType;let i = index"
+                [ngClass]="{'active':i===0}">
+                <div class="row" style="height:20px;margin-bottom: 10px;">
+                    <div class="col-7">
+                        [&nbsp;&nbsp;{{makeCompany.cName}}&nbsp;&nbsp;]&nbsp;&nbsp;
+                        <span *ngFor="let item of prodByDataType.list;let aa = index" class="tag"
+                            [ngClass]="tagClassLevel" (click)="scrollto(aa)">
+                            <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{item.config.tagName}}
+                        </span>
+                    </div>
+                    <div class="col-5" style="text-align: right">
+                        <span (click)="refresh()" style="cursor: pointer">[&nbsp;刷新&nbsp;]</span>
+                        <!-- <a class="text-secondary float-right"
+                                    [routerLink]="['display',makeCompany.cPCode]">[&nbsp;分类查看&nbsp;]</a> -->
+                    </div>
+                </div>
+                <div class="row mb-2 position-relative">
+                    <img class="w-100 h-100"
+                        src="../../../../assets/img/carousel/{{prodByDataType.config.dataType}}.jpg"
+                        style="min-width: 1000px;"
+                        onerror="javascript:this.src='../../../../assets/img/carousel/default.jpg'">
+                    <img src="../../../../assets/img/carousel/{{prodByDataType.config.dataType}}-hanzi.png"
+                        style="width: 20%;min-width: 180px;margin: 35px 0 0 12%;position: absolute"
+                        onerror="javascript:this.src='../../../../assets/img/carousel/default-hanzi.png'">
+                    <a class="carousel-control-prev h-100 m-0" href="#slides" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next h-100 m-0" href="#slides" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="row w-100" id="{{aa}}" *ngFor="let item of prodByDataType.list;let aa = index">
+                    <div class="col-md-12">
+                        <div class="row justify-content-between">
+                            <div class="col-4">
+                                <h4>{{item.config.tagName}}</h4>
+                            </div>
+                        </div>
+                        <hr class="row m-0">
+                        <div class="card-columns row p-2 m-0">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 p-0 mr-2 mb-2"
+                                *ngFor="let prod of item.prodList;let i = index"
+                                style="height: 120px;min-width: 240px;max-width: 250px;">
+                                <div class="card p-0 w-100 h-100">
+                                    <div class="card-body" style="cursor: pointer;">
+                                        <div class="left-img" style="float: left;width:33%;height: 100%;">
+                                            <div class="img_div">
+                                                <img class="align-self-start"
+                                                    *ngIf="item.config.dataFormat.toLocaleUpperCase()==='JPG'"
+                                                    src="{{prod.thumbnail}}" alt="{{item.cnName}}" style="width: 100%;">
+                                                <img class="align-self-start"
+                                                    *ngIf="item.config.dataFormat.toLocaleUpperCase()==='PDF'"
+                                                    src="../../../../assets/img/images/word-level{{level}}.png"
+                                                    style="width: 100%;">
+                                                <img class="align-self-start"
+                                                    *ngIf="item.config.dataFormat.toLocaleUpperCase()==='CSV'"
+                                                    src="../../../../assets/img/images/csv-level{{level}}.png"
+                                                    style="width: 100%;">
+                                                <div class="mask"
+                                                    (click)="download(item.prodList,item.config.dataFormat,i);">
+                                                    <h3><img src="../../../../assets/img/export.png" alt=""></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-detail" style="float: right;width:65%;height: 100%;"
+                                            (click)="viewProd(item.prodList,item.config.dataFormat.toLocaleUpperCase(),i);">
+                                            <p title="{{prod.prodName}}">{{prod.prodName}}</p>
+                                            <p style="position: absolute;right:15px;bottom:0">
+                                                <small class="text-muted">{{prod.date}}</small>
+                                            </p>
+                                        </div>
+                                        <div class="clear" style="clear: both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center" *ngIf="item.prodMetaList.length > 0">
+                            <a style="cursor: pointer;font-size: 10px;" (click)="showMoreProd(i,item.config.id)"
+                                *ngIf="item.prodMetaList.length > item.prodList.length">查看更多</a>
+                            <a style="cursor: auto;color:#bcbcbc;font-size: 10px;"
+                                *ngIf="item.prodList.length >= item.prodMetaList.length">已加载全部</a>
+                        </div>
+                        <div class="row justify-content-center" *ngIf="item.prodMetaList.length &lt;= 0">
+                            <a style="font-size: 10px;color:#bcbcbc">没有对应产品</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

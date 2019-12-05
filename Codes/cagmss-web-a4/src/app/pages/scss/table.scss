@@ -1,0 +1,13 @@
+ng2-smart-table {
+    table,
+    th,
+    tr,
+    td {
+        border: 1px solid #dee2e6;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .page-link {
+        font-size: 12px !important;
+    }
+}

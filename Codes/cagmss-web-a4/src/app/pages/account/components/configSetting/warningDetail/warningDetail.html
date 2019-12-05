@@ -1,0 +1,35 @@
+<div class="modal-content" style="border: none">
+    <div class="modal-header">
+        <p class="modal-title pull-left">修改预警信息</p>
+        <img src="assets/img/close.jpg" alt="" class="img-close" (click)="bsModalRef.hide()">
+    </div>
+    <div class="modal-body" style="height:86%;overflow:auto;padding: 5% 10%">
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+            <div class="form-group row">
+                <label for="vAlertLevel" class="col-sm-2 control-label">预警等级</label>
+                <div class="col-sm-10">
+                    <select class="form-control" [ngModel]="warning.vAlertLevel" [formControl]="vAlertLevel"
+                        (ngModelChange)="onLevelChange($event);">
+                        <option [ngValue]="level" *ngFor="let level of levelList">{{level}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="cDesc" class="col-sm-2 control-label">描述</label>
+                <div class="col-sm-10">
+                    <input [formControl]="cDesc" type="text" class="form-control" [(ngModel)]="warning.cDesc" id="cDesc"
+                        placeholder="描述">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4 control-label"></div>
+                <div class="offset-sm-1 col-sm-3">
+                    <button [disabled]="!form.valid" type="submit" class="btn yz-btn"
+                        [ngClass]="btnClassLevel">提交</button>
+                </div>
+                <div class="col-sm-5 control-label"></div>
+            </div>
+        </form>
+    </div>
+</div>
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>

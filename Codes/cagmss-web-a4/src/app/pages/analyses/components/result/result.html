@@ -1,0 +1,4 @@
+<ba-grid #grid [settings]="settings" [source]="source" (onBaGridReady)="onBaGridReady($event)"
+    (afterFilted)="dataChange($event)"></ba-grid>
+<button (click)="export()" style="position: absolute;right: 0;top: 0;margin: 12px 22px"
+    *ngIf="level==1">导出为excel</button>

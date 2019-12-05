@@ -1,0 +1,69 @@
+<div class="al-main3 row m-0">
+    <div class="quality-left col h-100">
+        <ba-card title="设置" baCardClass="with-scroll h-100">
+            <div class="form-horizontal quality-setting" style="font-size: 14px;color: #333333;">
+                <div class="row form-group">
+                    <div class="col-lg-3">区域</div>
+                    <div class="col-lg-9">
+                        <input type="text" (click)="showAreaInfo()" readonly value="{{selArea.cName}}"
+                            class="form-control" disabled *ngIf="areaService.level==3" />
+                        <input type="text" (click)="showAreaInfo()" readonly value="{{selArea.cName}}"
+                            class="form-control" *ngIf="areaService.level!=3" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-lg-3">作物</div>
+                    <div class="col-lg-9">
+                        <select [(ngModel)]="cropCode" class="form-control" disabled>
+                            <option value="013501">青枣</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-lg-3">日期</div>
+                    <div class="col-lg-9 row" style="margin: 0">
+                        <input type="text" class="form-control" [(ngModel)]="date" [bsConfig]="bsConfig" bsDatepicker
+                            [maxDate]="maxDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row button-list">
+                <div class="col-sm-6 text-center">
+                    <button (click)="execute()">制图</button>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button (click)="showData()">显示数据</button>
+                </div>
+            </div>
+        </ba-card>
+    </div>
+    <div class="middle-map col" *ngIf="IfGetData">
+        <yz-ngx-map #mapbox [mapUrl]="areaService.getMapUrl + '/styles/outdoors/style.json'" [showNavigation]="true"
+            [isTransform]="false" (onMapLoad)="mapload($event)" (onMapDraw)="mapDrawChange($event)" [showDraw]="true"
+            [showLOC]="true" [center]="center" [zoom]="zoom"></yz-ngx-map>
+    </div>
+    <div class="quality-right col">
+        <ba-card title="指标" baCardClass="with-scroll h-100">
+            <div [ngSwitch]="cropCode" class="setting-table">
+                <div *ngSwitchCase="013501">
+                    <indicator-jujube (onComplete)="render($event)" [isSettingMode]="isSettingMode"
+                        [areaCode]="selArea.cCode" [areaLevel]="selArea.vLevel" [date]="date" #jujube>
+                    </indicator-jujube>
+                </div>
+                <div *ngSwitchDefault>output2</div>
+            </div>
+            <div class="row button-list">
+                <div class="col-sm-6 text-center">
+                    <button (click)="isSettingMode = !isSettingMode">{{isSettingMode?'关闭':'指标设置'}}</button>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button (click)="refresh()">刷新指标</button>
+                </div>
+            </div>
+        </ba-card>
+    </div>
+    <!-- <div class="al-sidebar-left left" style="width:480px;height: calc(100% - 142px);">
+        <ba-card title="设置" baCardClass="with-scroll quality h-100" iconClass="fa fa-cog">
+        </ba-card>
+    </div> -->
+</div>

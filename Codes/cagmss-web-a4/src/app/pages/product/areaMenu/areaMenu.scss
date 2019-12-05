@@ -1,0 +1,37 @@
+@import "../../scss/color";
+.al-sidebar {
+    width: 220px;
+    left: 0;
+    z-index: 1001;
+    display: block;
+    min-height: 100%;
+    background-color: #ecf3f3;
+    height: 100%;
+    position: fixed;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    .nav-link {
+        cursor: pointer;
+    }
+    .nav.nav-tabs a:hover {
+        border: none;
+        color: #000000;
+    }
+    .nav.nav-tabs>li:first-of-type a {
+        border-top-left-radius: 0px;
+    }
+    .nav.nav-tabs>li.active>a {
+        color: #ffffff;
+        &:hover {
+            color: #ffffff;
+        }
+    }
+    .nav-pills .nav-pills .show>.nav-link {
+        color: #fff !important;
+        border-radius: 0;
+    }
+    .tab-content {
+        padding: 0 0 10px;
+        background: transparent;
+        color: #666666;
+    }
+}

@@ -1,0 +1,20 @@
+@import "../../../../scss/color";
+@import "../../../../../theme/sass/conf/conf.scss";
+._container{
+    width :800px;
+}
+.modal-footer .btn {
+    margin-right: 20px;
+}
+
+.yz-btn {
+  &-level1{
+      background-color: $yz-level1-primary3;
+  }
+  &-level2{
+      background-color: $yz-level2-primary3;
+  }
+  &-level3{
+      background-color: $yz-level3-primary3;
+  }
+}

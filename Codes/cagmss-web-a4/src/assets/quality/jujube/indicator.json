@@ -1,0 +1,17 @@
+{
+    "tavg1Min": 13.0,
+    "tavg2Min": 16.0,
+    "tavg3Min": 19.0,
+    "tc1Min": 4.0,
+    "tc2Min": 6.0,
+    "tc3Min": 9.0,
+    "s1Min": 2.0,
+    "s2Min": 3.5,
+    "s3Min": 5.0,
+    "acqi1Min": 0.5,
+    "acqi2Min": 1.5,
+    "acqi3Min": 2.5,
+    "tavgDays": 90,
+    "tcDays": 30,
+    "sDays": 30
+}

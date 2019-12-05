@@ -1,0 +1,176 @@
+<yz-ngx-toasty [position]="'center-center'"></yz-ngx-toasty>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+    <ba-card title="新建站点" baCardClass="with-scroll">
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cAera" class="col-sm-4 control-label">所属区域</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="selArea" [formControl]="cAera">
+                            <option [ngValue]="stat.cName" *ngFor="let stat of areaList">{{stat.cName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cCode" class="col-sm-4 control-label">区域名称</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="selCode" [formControl]="cCode" (ngModelChange)="onCodeChange($event);">
+                            <option [ngValue]="code.cCode" *ngFor="let code of codeList">{{code.cName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cStatName" class="col-sm-4 control-label">站点名称</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="cStatName" type="text" class="form-control"
+                            [(ngModel)]="newStation.cStatName" id="cStatName" placeholder="例：光泽">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cTypestation" class="col-sm-4 control-label">站点类型</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="selType" [formControl]="cTypestation">
+                            <option [ngValue]="type.code" *ngFor="let type of typeList">{{type.desc}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cPrvoName" class="col-sm-4 control-label">省份名称</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="cPrvoName" type="text" class="form-control"
+                            [(ngModel)]="newStation.cPrvoName" id="cPrvoName" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cCity" class="col-sm-4 control-label">城市名称</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="cCity" type="text" class="form-control" [(ngModel)]="newStation.cCity"
+                            id="cCity" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="v01000" class="col-sm-4 control-label">站号</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="v01000" type="text" class="form-control" [(ngModel)]="newStation.v01000"
+                            id="v01000" placeholder="例：58724">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="v07001" class="col-sm-4 control-label">测站高度</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="v07001" type="text" class="form-control" [(ngModel)]="newStation.v07001"
+                            id="v07001" placeholder="例:268.2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="v06001" class="col-sm-4 control-label">经度</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="v06001" type="text" class="form-control" [(ngModel)]="newStation.v06001"
+                            id="v06001" placeholder="例：27.5333">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="v05001" class="col-sm-4 control-label">纬度</label>
+                    <div class="col-sm-8">
+                        <input [formControl]="v05001" type="text" class="form-control" [(ngModel)]="newStation.v05001"
+                            id="v05001" placeholder="例:117.3167">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cAgmesta" class="col-sm-4 control-label">是否为农气站</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="1" [formControl]="cAgmesta">
+                            <option [ngValue]="1">是</option>
+                            <option [ngValue]="2">否</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="cAutosoilsta" class="col-sm-4 control-label">是否为自动站</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="1" [formControl]="cAutosoilsta">
+                            <option [ngValue]="1">是</option>
+                            <option [ngValue]="2">否</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row form-group">
+                    <label for="cCropsta" class="col-sm-4 control-label">是否为作物站</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="1" [formControl]="cCropsta">
+                            <option [ngValue]="1">是</option>
+                            <option [ngValue]="2">否</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row form-group">
+                    <label for="cMeteosta" class="col-sm-4 control-label">是否为气象站</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="1" [formControl]="cMeteosta">
+                            <option [ngValue]="1">是</option>
+                            <option [ngValue]="2">否</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="row form-group">
+                    <label for="cSoilsta" class="col-sm-4 control-label">是否为土壤站</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [ngModel]="1" [formControl]="cSoilsta">
+                            <option [ngValue]="1">是</option>
+                            <option [ngValue]="2">否</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 control-label"></div>
+            <div class="offset-sm-1 col-sm-3">
+                <button [disabled]="!form.valid" type="submit" class="btn yz-btn" [ngClass]="btnClassLevel">提交</button>
+            </div>
+            <div class="col-sm-8 control-label"></div>
+        </div>
+    </ba-card>
+</form>

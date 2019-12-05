@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" background-color="transparent">
+<Style name="rice">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FFFFFF" value = "0" />
+        <stop color="#C0C0C0" value = "1" />
+        <stop color="#40E0D0" value = "2" />
+        <stop color="#7FFFAA" value = "3" />
+        <stop color="#7CFC00" value = "4" />
+        <stop color="#008000" value = "5" />
+        <stop color="#ADFF2F" value = "6" />
+        <stop color="#FFFACD" value = "7" />
+    <stop color="#F0E68C" value = "8" />
+    <stop color="#FFD700" value = "9" />
+    <stop color="#DAA520" value = "10" />
+    <stop color="#FF8C00" value = "11" />
+    <stop color="#FF4500" value = "12" />
+    <stop color="#C71585" value = "13" />
+    <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="wheat">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FFFFFF" value = "0" />
+        <stop color="#CCCCCC" value = "1" />
+        <stop color="#D3FFBE" value = "2" />
+        <stop color="#AAFF00" value = "3" />
+        <stop color="#55FF00" value = "4" />
+        <stop color="#38A800" value = "5" />
+        <stop color="#73B2FF" value = "6" />
+        <stop color="#005CE6" value = "7" />
+    <stop color="#FFC300" value = "8" />
+    <stop color="#FF9D00" value = "9" />
+    <stop color="#FFFF00" value = "10" />
+    <stop color="#FF4D00" value = "11" />
+    <stop color="#FF2600" value = "12" />
+    <stop color="#A83800" value = "13" />
+    <stop color="#A900E6" value = "14" />
+    <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="cotton">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FFFFFF" value = "0" />
+        <stop color="#CCCCCC" value = "1" />
+        <stop color="#D3FFBE" value = "2" />
+        <stop color="#AAFF00" value = "3" />
+        <stop color="#55FF00" value = "4" />
+        <stop color="#38A800" value = "5" />
+        <stop color="#73B2FF" value = "6" />
+        <stop color="#005CE6" value = "7" />
+        <stop color="#FFC300" value = "8" />
+	    <stop color="#FF9D00" value = "9" />
+	    <stop color="#FF4D00" value = "10" />
+	    <stop color="#A83800" value = "11" />
+	    <stop color="#A900E6" value = "12" />
+       <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="wiri">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FFFFFF" value = "0" />
+        <stop color="#CCCCCC" value = "1" />
+        <stop color="#D3FFBE" value = "2" />
+        <stop color="#AAFF00" value = "3" />
+        <stop color="#55FF00" value = "4" />
+        <stop color="#38A800" value = "5" />
+        <stop color="#73B2FF" value = "6" />
+        <stop color="#005CE6" value = "7" />
+        <stop color="#FFC300" value = "8" />
+	    <stop color="#FF9D00" value = "9" />
+	    <stop color="#FF4D00" value = "10" />
+	    <stop color="#A83800" value = "11" />
+	    <stop color="#A900E6" value = "12" />
+       <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="county">
+  <Rule>
+    <PolygonSymbolizer fill="transparent"/>
+    <LineSymbolizer stroke="#6E6E6E" stroke-width="1"/>
+  </Rule>
+</Style>
+<Style name="capital">
+  <Rule>
+    <TextSymbolizer size="10" fill="black"  face-name="KlokanTech Noto Sans CJK Bold" halo-radius="2" dy="8" allow-overlap="false">[NAME]</TextSymbolizer>
+    <MarkersSymbolizer placement="point" multi-policy="largest" fill="#000" width="8" allow-overlap="true"/>
+  </Rule>
+</Style>
+<Style name="spma">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FFFFFF" value = "0" />
+        <stop color="#CCCCCC" value = "1" />
+        <stop color="#D3FFBE" value = "2" />
+        <stop color="#AAFF00" value = "3" />
+        <stop color="#55FF00" value = "4" />
+        <stop color="#FFC300" value = "5" />
+  	    <stop color="#FF9D00" value = "6" />
+        <stop color="#FF4D00" value = "7" />
+  	    <stop color="#A83800" value = "8" />
+  	    <stop color="#A900E6" value = "9" />
+       <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="soyb">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FFFFFF" value = "0" />
+        <stop color="#CCCCCC" value = "1" />
+        <stop color="#D3FFBE" value = "2" />
+        <stop color="#AAFF00" value = "3" />
+        <stop color="#55FF00" value = "4" />
+        <stop color="#38A800" value = "5" />
+        <stop color="#73B2FF" value = "6" />
+        <stop color="#005CE6" value = "7" />
+        <stop color="#FFC300" value = "8" />
+  	    <stop color="#FF9D00" value = "9" />
+  	    <stop color="#FF4D00" value = "10" />
+  	    <stop color="#A83800" value = "11" />
+  	    <stop color="#A900E6" value = "12" />
+       <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="ADT">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#00F500" value = "-1" />
+        <stop color="#00F500" value = "0" />
+        <stop color="#FFFF00" value = "1" />
+        <stop color="#FFAA00" value = "2" />
+        <stop color="#FF0000" value = "3" />
+        <stop color="#A80000" value = "4" />
+    <stop color="#1F3DFA" value = "12" />
+    <stop color="#CCCCCC" value = "13" />
+    <stop color="transparent" value = "255" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="RSM">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#FF0000" value = "4000" />
+        <stop color="#FFFF00" value = "6000" />
+        <stop color="#00A884" value = "9000" />
+        <stop color="transparent" value = "32760" />
+    <stop color="transparent" value = "32766" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="TAV">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#030D1C" value = "-1000" />
+        <stop color="#061E46" value = "-400" />
+        <stop color="#062F6B" value = "-360" />
+        <stop color="#0000B0" value = "-320" />
+        <stop color="#094FB7" value = "-280" />
+        <stop color="#0570B0" value = "-240" />
+        <stop color="#3296B4" value = "-200" />
+        <stop color="#32A696" value = "-160" />
+        <stop color="#53BD9F" value = "-120" />
+        <stop color="#99F0B2" value = "-80" />
+        <stop color="#CDFFCD" value = "-40" />
+        <stop color="#FFFFBF" value = "0" />
+        <stop color="#FEEC82" value = "40" />
+        <stop color="#FED963" value = "80" />
+        <stop color="#F5B831" value = "120" />
+        <stop color="#FFAA00" value = "160" />
+        <stop color="#E4750F" value = "200" />
+        <stop color="#DD531E" value = "240" />
+        <stop color="#B63512" value = "280" />
+        <stop color="#8F1D20" value = "320" />        
+        <stop color="#6F1719" value = "350" />
+        <stop color="#4C0026" value = "370" />
+        <stop color="#800040" value = "400" />        
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="TAD">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#0000FF" value = "-32760" />
+        <stop color="#094FB8" value = "-6" />
+        <stop color="#0095FF" value = "-4" />
+        <stop color="#61B8FF" value = "-2" />
+        <stop color="#ACF7FC" value = "-1" />
+        <stop color="#FFFFBF" value = "0" />
+        <stop color="#FFDB63" value = "1" />
+        <stop color="#FFAA00" value = "2" />
+        <stop color="#FF6600" value = "4" />
+        <stop color="#E60000" value = "6" />
+        <stop color="transparent" value = "32760" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="RRR">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#F0F0F0" value = "-1" />
+        <stop color="#A6F28F" value = "0.5" />
+        <stop color="#71D666" value = "5" />
+        <stop color="#3DBA3D" value = "10" />
+        <stop color="#61B8FF" value = "25" />
+        <stop color="#0000FF" value = "50" />
+        <stop color="#FA00FA" value = "100" />
+        <stop color="#800040" value = "250" />
+        <stop color="#F90618" value = "400" />
+        <stop color="#FF8000" value = "600" />
+        <stop color="#884400" value = "800" />
+        <stop color="transparent" value = "32760" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="RRD">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#EDEADA" value = "-32760" />
+        <stop color="#FF6464" value = "-100" />
+        <stop color="#FF9966" value = "-80" />
+        <stop color="#FFD280" value = "-50" />
+        <stop color="#EFFE63" value = "-25" />
+        <stop color="#A1F18D" value = "0" />
+        <stop color="#00FFFF" value = "25" />
+        <stop color="#00D0CB" value = "50" />
+        <stop color="#009999" value = "80" />
+        <stop color="#0096FF" value = "100" />
+        <stop color="#0070FF" value = "200" />
+        <stop color="#0000FF" value = "400" />
+        <stop color="transparent" value = "32760" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="RDP">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#EDEADA" value = "-32760" />
+        <stop color="#FF6464" value = "-100" />
+        <stop color="#FF9966" value = "-80" />
+        <stop color="#FFD280" value = "-50" />
+        <stop color="#EFFE63" value = "-25" />
+        <stop color="#A1F18D" value = "0" />
+        <stop color="#00FFFF" value = "25" />
+        <stop color="#00D0CB" value = "50" />
+        <stop color="#009999" value = "80" />
+        <stop color="#0096FF" value = "100" />
+        <stop color="#0070FF" value = "200" />
+        <stop color="#0000FF" value = "400" />
+        <stop color="transparent" value = "32760" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="SSH">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#BED2FF" value = "0" />
+        <stop color="#FFFFBE" value = "15" />
+        <stop color="#FFD6D6" value = "30" />
+        <stop color="#FF8585" value = "45" />
+        <stop color="#FF5C5C" value = "60" />
+        <stop color="#FF3333" value = "75" />
+        <stop color="#FF0008" value = "90" />   
+        <stop color="transparent" value = "32760" />            
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="SSD">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#0000FF" value = "-32760" />
+        <stop color="#094FB7" value = "-40" />
+        <stop color="#0096FF" value = "-30" />
+        <stop color="#60B8FF" value = "-20" />
+        <stop color="#ABF7EB" value = "-10" />
+        <stop color="#FFFFBF" value = "0" />
+        <stop color="#FFD963" value = "10" />
+        <stop color="#FFAA00" value = "20" />
+        <stop color="#FF6600" value = "30" />
+        <stop color="#FF0000" value = "40" />
+        <stop color="transparent" value = "32760" />       
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+<Style name="SDP">
+  <Rule>
+    <RasterSymbolizer>
+      <RasterColorizer default-mode="discrete" default-color="transparent" epsilon="0.001">
+        <stop color="#0000FF" value = "-100" />
+        <stop color="#0070FF" value = "-80" />
+        <stop color="#73B2FF" value = "-50" />
+        <stop color="#BEE8FF" value = "-25" />
+        <stop color="#FFFFBF" value = "0" />
+        <stop color="#FEEC82" value = "25" />
+        <stop color="#F5B831" value = "50" />
+        <stop color="#E4750F" value = "80" />
+        <stop color="#B63512" value = "100" />
+        <stop color="#6F1719" value = "200" />
+        <stop color="transparent" value = "32760" />
+      </RasterColorizer>
+    </RasterSymbolizer>
+  </Rule>
+</Style>
+</Map>

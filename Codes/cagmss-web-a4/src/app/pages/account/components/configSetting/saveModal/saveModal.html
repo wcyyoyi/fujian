@@ -1,0 +1,102 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">模版配置</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" style="text-align: center;padding:3rem 1rem">
+    <div class="list-container">
+        <div class="row">
+            <span class="col-md-2"></span>
+            <div class="col-md-3">制作单位：</div>
+            <select [ngModel]="makeCompany" (ngModelChange)="onUnitChange($event);" class="col-md-5">
+                <option *ngFor="let unit of unitList" [ngValue]="unit.cCode">{{unit.cName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="row">
+            <span class="col-md-2"></span>
+            <div class="col-md-3">数据要素：</div>
+            <select [ngModel]="dataElementCode" (ngModelChange)="onElementChange($event);" class="col-md-5">
+                <option *ngFor="let element of elementList" [ngValue]="element.element">{{element.name}}</option>
+            </select>
+        </div>
+        <div class="time-list" *ngIf="dataElementCode=='MONT'">
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">年：</span>
+                <select [ngModel]="selYear" (ngModelChange)="onYearChange($event);" class="col-md-5"
+                    [disabled]="option=='watch'">
+                    <option [ngValue]=0000>通用</option>
+                    <option *ngFor="let item of yearList" [ngValue]="item">{{item}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">月：</span>
+                <select [ngModel]="selMonth" (ngModelChange)="onMonthChange($event);" class="col-md-5">
+                    <option [ngValue]=00>通用</option>
+                    <option *ngFor="let list of monthList" [ngValue]="list">{{list}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="time-list" *ngIf="dataElementCode=='TEND'">
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">年：</span>
+                <select [ngModel]="selYear" (ngModelChange)="onYearChange($event);" class="col-md-5">
+                    <option [ngValue]=0000>通用</option>
+                    <option *ngFor="let item of yearList" [ngValue]="item">{{item}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">月：</span>
+                <select [ngModel]="selMonth" (ngModelChange)="onMonthChange($event);" class="col-md-5">
+                    <option [ngValue]=00>通用</option>
+                    <option *ngFor="let list of monthList" [ngValue]="list">{{list}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">旬：</span>
+                <select [ngModel]="selXun" (ngModelChange)="onXunChange($event);" class="col-md-5">
+                    <option [ngValue]=00>通用</option>
+                    <option [ngValue]=1>上旬</option>
+                    <option [ngValue]=11>中旬</option>
+                    <option [ngValue]=21>下旬</option>
+                </select>
+            </div>
+        </div>
+        <div class="time-list" *ngIf="dataElementCode=='WEEK'">
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">年：</span>
+                <select [ngModel]="selYear" (ngModelChange)="onYearChange($event);" class="col-md-5">
+                    <option [ngValue]=0000>通用</option>
+                    <option *ngFor="let item of yearList" [ngValue]="item">{{item}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <span class="col-md-2"></span>
+                <span class="col-md-3">周：</span>
+                <select [ngModel]="selWeek" (ngModelChange)="onWeekChange($event);" class="col-md-5">
+                    <option [ngValue]=00>通用</option>
+                    <option *ngFor="let _list of weekList" [ngValue]="_list">{{_list}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="row">
+            <span class="col-md-2"></span>
+            <span class="col-md-3">数据内容：</span>
+            <select [ngModel]="dataType" (ngModelChange)="onTypeChange($event);" class="col-md-5">
+                <option *ngFor="let type of typeList" [ngValue]="type.value">{{type.desc}}</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" class="btn yz-btn" style="margin-top: 20px" [ngClass]="btnClassLevel" (click)="save()"
+        #sBtn>保存</button>
+</div>

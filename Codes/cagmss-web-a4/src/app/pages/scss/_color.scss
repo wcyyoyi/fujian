@@ -1,0 +1,105 @@
+
+$yz-level3-primary1:#63aDD0;
+$yz-level3-primary2:#3A9FD0;
+$yz-level3-primary3:#066EA0;
+$yz-level3-primary4:#02486A;
+
+$yz-level1-primary1:#FED100;
+$yz-level1-primary2:#FEC040;
+$yz-level1-primary3:#FFAA00;
+$yz-level1-primary4:#A87100;
+
+$yz-level2-primary1:#63D99A;
+$yz-level2-primary2:#37D982;
+$yz-level2-primary3:#00B353;
+$yz-level2-primary4:#007737;
+
+
+//baNavbarTop.scss
+// $yz-level3-navbar-top: linear-gradient(to top, #078cbe, #17cbd2);
+$yz-level3-navbar-top: linear-gradient(to top, $yz-level3-primary2, $yz-level3-primary1);
+$yz-level1-navbar-top: linear-gradient(to top, $yz-level1-primary2, $yz-level1-primary1);
+$yz-level2-navbar-top: linear-gradient(to top, $yz-level2-primary2, $yz-level2-primary2);
+//baSidebar.scss
+$yz-level3-sidebar: linear-gradient(to top,$yz-level3-primary3, $yz-level3-primary2);
+$yz-level1-sidebar: linear-gradient(to top, $yz-level1-primary3, $yz-level1-primary2);
+$yz-level2-sidebar: linear-gradient(to top, $yz-level2-primary3, $yz-level2-primary2);
+
+$yz-level3-page-top: linear-gradient(to top, $yz-level3-primary3, $yz-level3-primary4);
+$yz-level1-page-top: linear-gradient(to top, $yz-level1-primary3, $yz-level1-primary4);
+$yz-level2-page-top: linear-gradient(to top, $yz-level2-primary3, $yz-level2-primary4);
+
+$white-color:white;
+$black-one-color:#666666;
+$black-two-color:#333333;
+
+
+$main-bg-level3:#0d1839;
+$main-bg-level1:rgb(237,238,239);
+$main-bg-level2:rgb(237,238,239);
+
+$header-bg-level3:#1e2b51;
+$header-bg-level1:rgb(213,230,217);
+$header-bg-level2:white;
+
+$title-bg-level3:#1e2b51;
+$title-bg-level1:#288e44;
+$title-bg-level2:black;
+
+
+
+$title-active-bg-level3:#03bde2;
+$title-active-bg-level1:rgb(30,53,34);
+$title-active-bg-level2:#4898e7;
+
+$card-bg-level3:#1e2b51;
+$card-bg-level1:white;
+$card-bg-level2:white;
+
+$empty-bg-level3:rgb(19,28,51);
+$empty-bg-level1:rgb(237,238,239);
+$empty-bg-level2:rgb(237,238,239);
+
+$card-title-color-level3:#03bde2;
+$card-title-color-level1:white;
+$card-title-color-level2:#4898e7;
+
+$card-title-bg-level3:#1e2b51;
+$card-title-bg-level1:#288e44;
+$card-title-bg-level2:white;
+
+$common-bg-level3:#03bde2;
+$common-bg-level1:#288e44;
+$common-bg-level2:#4898e7;
+
+$crop-border-level3:#1e2b51;
+$crop-border-level1:gainsboro;
+$crop-border-level2:gainsboro;
+
+$crop-select-level3:rgba(176,188,224,0.6);
+$crop-select-level1:rgba(90,124,98,0.6);
+$crop-select-level2:rgba(72,152,231,0.6);
+
+$page-color-level3:#ffffff;
+$page-color-level1:#288e44;
+$page-color-level2:#333333;
+
+$text-color-level3:#b0bce0;
+$text-color-level1:#333333;
+$text-color-level2:#999999;
+
+
+$aside-bg-level3:#2b3860;
+$aside-bg-level1:#e2f2e6;
+$aside-bg-level2:#eff7ff;
+
+$aside-border-level3:#03bde2;
+$aside-border-level1:#288e44;
+$aside-border-level2:#4898e7;
+
+$header-border-level3:#0d1839;
+$header-border-level1:#288e44;
+$header-border-level2:#4898e7;
+
+
+$tab-bg-level:#e7ecf9;
